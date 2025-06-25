@@ -1,0 +1,405 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+
+
+.main-grid {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2rem;
+  gap: 2rem;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+
+.left-column {
+  flex: 1 1 600px;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.right-column {
+  flex: 1 1 300px;
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+
+.container1 img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.container1 p {
+  margin-top: 1rem;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  font-weight: 500;
+  color: #305530;
+  text-align: center;
+}
+
+
+.faq-title {
+  color: #b8a000;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.faqs {
+  margin-top: 0.1rem;
+}
+
+.faqs h3#outside {
+  color: #b8a000;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+}
+
+.faqs2 {
+  background-color: #2e5831;
+  color: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  line-height: 1.6;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.faqs2 p {
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.faqs2 ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.faqs2 li {
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+
+.containerHotline {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  align-items: center;
+}
+
+.hotline-row {
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.hotline-row img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+
+.tarrif {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.tarrif img {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+
+.video-card {
+  background-color: #4CAF50;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  color: white;
+  transition: transform 0.2s ease;
+  font-family: inherit;
+}
+
+.video-card:hover {
+  transform: scale(1.01);
+}
+
+.video-card img {
+  width: 100%;
+  display: block;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.video-card .content {
+  padding: 1rem;
+}
+
+.video-card .source {
+  font-size: 0.75rem;
+  color: #d4f6d1;
+  margin-bottom: 0.25rem;
+}
+
+.video-card .title {
+  font-size: 1rem;
+  line-height: 1.3;
+  margin: 0.25rem 0;
+  color: #fff;
+}
+
+.video-card a {
+  text-decoration: none;
+}
+
+.video-card .meta {
+  font-size: 0.75rem;
+  color: #e8fbe5;
+  margin-top: 0.5rem;
+}
+
+
+@media (max-width: 768px) {
+  .main-grid {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .left-column,
+  .right-column {
+    max-width: 100%;
+  }
+
+  .hotline-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tarrif img {
+    max-width: 250px;
+  }
+
+  
+  .tesda-course {
+      width: 100% !important; 
+      margin: 15px 0 !important; 
+  }
+}
+
+
+.container3 {
+  width: 90%;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.feature h2, .tesda-courses-section h2 { 
+  text-align: center;
+  font-size: 32px;
+  font-weight: 800;
+  color: white;
+  background: linear-gradient(to right, #5ca145, #d7c12a);
+  padding: 12px 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 20px; 
+}
+
+
+.f1, .f2, .f3, .tesda-course { 
+  display: inline-block;
+  vertical-align: top;
+  width: 30%; 
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin: 20px 1.5%;
+  padding: 15px;
+}
+
+.f1 img, .f2 img, .f3 img, .tesda-course img {
+  width: 100%;
+  height: 180px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.f1 p, .f2 p, .f3 p, .tesda-course p {
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.f1 a p, .f2 a p, .f3 a p, .tesda-course a p {
+  text-decoration: none;
+  color: black;
+}
+
+.f1 a, .f2 a, .f3 a, .tesda-course a {
+  text-decoration: none;
+}
+
+
+.tesda-course {
+  border: 1px solid #e0e0e0; 
+}
+
+.tesda-course b {
+  color: #2e7d32; 
+}
+
+
+.nums {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 0;
+  clear: both;
+  gap: 20px;
+}
+
+
+.nums button {
+  padding: 8px 16px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  background-color: white;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.nums button:hover,
+.nums button:focus {
+  background-color: #ffe071;
+  border-color: #5ca145;
+}
+
+.nums button:first-child {
+  background-color: #ffe071;
+  font-weight: bold;
+}
+
+
+
+
+.seminars {
+   width: 100vw;
+margin-left: calc(-50vw + 50%);
+background-color: #F7FFEF;
+padding: 40px 0;
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 40px;
+flex-wrap: wrap;
+border-top: 2px solid #d7e1cc;
+border-bottom: 2px solid #d7e1cc;
+}
+
+
+
+.seminar1 {
+  flex: 1 1 460px;
+  max-width: 460px;
+}
+
+.seminar1 h3 {
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  color: #2e7d32;
+}
+
+.seminar1 h3::before {
+  content: "FREE ";
+  color: #fbc02d;
+  text-shadow: none;
+  font-weight: 800;
+}
+
+.seminar1 img {
+  width: 100%;
+  height: auto;
+
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+
+.seminar2 {
+  flex: 1 1 460px;
+  max-width: 460px;
+}
+
+.seminar2 p:nth-of-type(1) {
+  font-size: 18px;
+  font-weight: 700;
+  color: #2e7d32;
+  margin-bottom: 12px;
+}
+
+.seminar2 p:nth-of-type(2) {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #222;
+  margin-bottom: 24px;
+}
+
+.seminar2 button {
+  background-color: #2e7d32;
+  color: white;
+  font-weight: 600;
+  padding: 12px 24px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  box-shadow: 0px 2px 5px rgba(0,0,0,0.15);
+  transition: background-color 0.3s ease;
+}
+
+.seminar2 button:hover {
+  background-color: #256b28;
+}
+
+.seminar2 button img {
+  width: 20px;
+  height: 20px;
+}

@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="agriweather.css" />
+    <link rel="icon" href="../images/home-logo.png" />
+    <link rel="stylesheet" href="../top-bar.css" />
+    <script src="../topbar.js"></script>
+    <title>AniMo.ph</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="top-bar">
+      <div class="top-bar-left">
+        <span><i class="fas fa-phone"></i> +00 123 456 8910</span>
+        <span><i class="fas fa-envelope"></i> animoph@gmail.com</span>
+      </div>
+      <div class="top-bar-right">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+
+    <nav>
+      <ul class="sidebar">
+        <li onclick="hideSidebar()">
+          <a href="#"><i class="bx bx-x"></i></a>
+          <hr />
+        </li>
+        <li class="hideOnPC">
+          <a href="../index.html">Home</a>
+          <hr />
+        </li>
+        <li class="hideOnPC">
+          <a href="../agriabout.html">About Us</a>
+          <hr />
+        </li>
+        <li class="hideOnPC">
+          <a href="../agri weather/agriweather.html" class="active">Weather</a>
+          <hr />
+        </li>
+        <li class="hideOnPC">
+          <a href="../loan.html">Loan</a>
+          <hr />
+        </li>
+        <li class="hideOnPC">
+          <a href="../agribuy.html">Buy</a>
+          <hr />
+        </li>
+        <li class="hideOnPC">
+          <a href="../agrisell.html">Sell</a>
+          <hr />
+        </li>
+        <li><a href="../Agri profilr/agriprofile.html">Profile</a></li>
+        <hr />
+        
+        <li><a href="../Agri News/agrinews.html">Gov't Updates</a></li>
+        <hr />
+        <li><a href="../Agri Services/agriservices.html">AniMo Services</a></li>
+        <hr />
+        <li>
+          <a href="../Agri Learning/agrilearning.html">Learning Hub / Guides</a>
+        </li>
+        <hr />
+        <li><a href="../agrifeedback.html">Feedback</a></li><hr>
+        <li>
+          <a href="../adminLogin.html">Admin</a>
+        </li>
+        <hr>
+        <li><a href="../index.html">Log Out</a></li>
+        <hr />
+      </ul>
+
+      <ul>
+        <li id="logo">
+          <a href="#"><img src="../images/home-logo.png" alt="logo" /></a>
+        </li>
+        <li class="hideOnMobile"><a href="../index.html">Home</a></li>
+        <li class="hideOnMobile"><a href="../agriabout.html">About Us</a></li>
+        <li class="hideOnMobile">
+          <a href="../agri weather/agriweather.html" class="active">Weather</a>
+        </li>
+        <li class="hideOnMobile"><a href="../loan.html">Loan</a></li>
+        <li class="hideOnMobile"><a href="../agribuy.html">Buy</a></li>
+        <li class="hideOnMobile"><a href="../agrisell.html">Sell</a></li>
+        <li onclick="showSidebar()">
+          <a href="#"><i class="bx bx-menu"></i></a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="outerContainer">
+      <div class="container">
+        <div class="search-box">
+          <input
+            type="text"
+            id="locationInput"
+            placeholder="Enter your location..."
+          />
+          <button onclick="getWeather()">
+            <span class="icon">📍</span>
+          </button>
+        </div>
+
+        <div class="weather-info">
+          <div id="mainWeatherBox" class="main-weather">
+            <img
+              src="sunny.avif"
+              class="weather-bg sunny"
+              alt="Sunny background"
+            />
+            <img
+              src="cloudy.webp"
+              class="weather-bg cloudy"
+              alt="Cloudy background"
+            />
+            <img
+              src="rainy.jpg"
+              class="weather-bg rainy"
+              alt="Rainy background"
+            />
+            <img
+              src="stormy.jpg"
+              class="weather-bg stormy"
+              alt="Stormy background"
+            />
+            <img
+              src="default.png"
+              class="weather-bg default"
+              alt="Default background"
+            />
+
+            <div class="main-weather-content">
+              <img id="weatherIcon" src="" alt="Weather icon" />
+              <h3 id="city">--</h3>
+              <p id="date">--</p>
+              <p id="weatherMain">--</p>
+              <p id="temp">--</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="forecast" id="forecast"></div>
+      </div>
+    </div>
+
+    <div class="weatherT-wrapper">
+      <div class="weatherT">
+        <h3>WEATHER TYPES:</h3>
+        <p>Explore weather types & forecasts!</p>
+      </div>
+    </div>
+
+    <div class="weathercontainer">
+      <div class="weatherP">
+        <div class="weatherTC">
+          <div class="weatherCard">
+            <h4>Cloudy</h4>
+            <img src="clouds.png" alt="Cloudy" />
+            <p>Overcast skies and cooler weather, ideal for light farm work.</p>
+          </div>
+
+          <div class="weatherCard">
+            <h4>Sunny</h4>
+            <img src="cloud-sun.png" alt="Sunny" />
+            <p>
+              Clear skies and ideal conditions for drying crops or fieldwork.
+            </p>
+          </div>
+
+          <div class="weatherCard">
+            <h4>Rainy</h4>
+            <img src="cloud-drizzle.png" alt="Rainy" />
+            <p>
+              Wet conditions ahead; protect sensitive crops and manage drainage.
+            </p>
+          </div>
+
+          <div class="weatherCard">
+            <h4>Stormy</h4>
+            <img src="cloud-lightning-rain.png" alt="Stormy" />
+            <p>Severe weather; secure tools and pause field activities.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pest-control-wrapper">
+      <div class="pest-control-title">
+        <h3>PEST CONTROL:</h3>
+        <p>Learn about common pests and how to protect your farm!</p>
+      </div>
+    </div>
+
+    <div class="pest-container">
+      <div class="pest-content">
+        <div class="pest-card">
+          <div class="pest-icon-wrapper">
+            <i class="fa-solid fa-bug"></i> </div>
+          <h4>Aphids</h4>
+          <p class="pest-description">
+            Tiny, sap-sucking insects that can stunt plant growth and transmit
+            viruses.
+          </p>
+          <div class="card-details">
+            <h5>How to Deal:</h5>
+            <ul class="how-to-deal-list">
+              <li>Use neem oil or insecticidal soap.</li>
+              <li>Introduce ladybugs (natural predators).</li>
+              <li>Hose off plants with strong water spray.</li>
+            </ul>
+            <h6>Warnings:</h6>
+            <p class="warning-text">
+              While generally harmless to humans, large infestations can
+              devastate crops quickly by weakening plants and spreading diseases.
+            </p>
+          </div>
+        </div>
+
+        <div class="pest-card">
+          <div class="pest-icon-wrapper">
+            <i class="fa-solid fa-worm"></i> </div>
+          <h4>Armyworms</h4>
+          <p class="pest-description">
+            Larvae that feed on leaves and stems, causing significant defoliation.
+          </p>
+          <div class="card-details">
+            <h5>How to Deal:</h5>
+            <ul class="how-to-deal-list">
+              <li>Apply Bacillus thuringiensis (Bt) spray.</li>
+              <li>Hand-pick and destroy visible larvae.</li>
+              <li>Maintain good field sanitation.</li>
+            </ul>
+            <h6>Warnings:</h6>
+            <p class="warning-text">
+              Armyworms can cause widespread crop damage in a short period, leading
+              to substantial yield losses. Not directly harmful to humans.
+            </p>
+          </div>
+        </div>
+
+        <div class="pest-card">
+          <div class="pest-icon-wrapper">
+          <i class="fa-solid fa-paw"></i></div>
+          <h4>Rodents (Rats/Mice)</h4>
+          <p class="pest-description">
+            Can damage crops by gnawing on plants, consuming stored grains, and
+            contaminating food.
+          </p>
+          <div class="card-details">
+            <h5>How to Deal:</h5>
+            <ul class="how-to-deal-list">
+              <li>Set traps (snap traps, live traps).</li>
+              <li>Eliminate food sources and secure storage areas.</li>
+              <li>Encourage natural predators (e.g., owls).</li>
+            </ul>
+            <h6>Warnings:</h6>
+            <p class="warning-text">
+              Can transmit diseases like leptospirosis, hantavirus,
+              and salmonellosis through their droppings and urine.
+            </p>
+          </div>
+        </div>
+
+        <div class="pest-card">
+          <div class="pest-icon-wrapper">
+            <i class="fa-solid fa-locust"></i> </div>
+          <h4>Locusts/Grasshoppers</h4>
+          <p class="pest-description">
+            Highly migratory pests that can consume entire fields of crops in a
+            very short time.
+          </p>
+          <div class="card-details">
+            <h5>How to Deal:</h5>
+            <ul class="how-to-deal-list">
+              <li>Early detection and targeted insecticide application.</li>
+              <li>Biological control (fungal biopesticides).</li>
+              <li>Community-wide monitoring and control efforts.</li>
+            </ul>
+            <h6>Warnings:</h4>
+            <p class="warning-text">
+              Locust swarms are one of the most destructive agricultural pests,
+              capable of causing widespread famine by destroying all vegetation. Not
+              directly harmful to humans but can cause severe food insecurity.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dailyN">
+      <h2><img src="newspaper.png" alt="News icon" />Daily News</h2>
+
+      <div class="newsGrid">
+        <div class="newsCard">
+          <img src="panfilo.jpg" alt="News 1" />
+          <p>GMA Integrated News - May 7, 2025</p>
+          <h4>
+            Ping Lacson pushes for law providing scholarship for agriculture
+            students
+          </h4>
+          <a
+            href="https://www.gmanetwork.com/news/topstories/nation/945342/ping-lacson-pushes-for-law-providing-scholarship-for-agriculture-students/story/"
+            >Read More</a
+          >
+        </div>
+
+        <div class="newsCard">
+          <img src="dalaunch.jpg" alt="News 2" />
+          <p>GMA Integrated News - April 11, 2025</p>
+          <h4>DA launches Agri-Puhunan at Pantawid farmer credit program</h4>
+          <a
+            href="https://www.gmanetwork.com/news/money/economy/942441/da-launches-agri-puhunan-at-pantawid-farmer-credit-program/story/"
+            >Read More</a
+          >
+        </div>
+
+        <div class="newsCard">
+          <img src="ani.jpg" alt="News 3" />
+          <p>GMA Integrated News - September 9, 2024</p>
+          <h4>
+            Senate gives final nod to bill amending Agricultural Tariffication
+            Act
+          </h4>
+          <a
+            href="https://www.gmanetwork.com/news/topstories/nation/919847/senate-gives-final-nod-to-bill-amending-agricultural-tariffication-act/story/"
+            >Read More</a
+          >
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <hr />
+      <div>
+        <div class="footer-left">
+          <p>Copyright © 2025 AniMo.Ph. All Rights Reserved.</p>
+        </div>
+        <div class="footer-right">
+          <p>
+            <a href="#">Terms of Use</a> | <a href=""> Privacy Policy</a> |
+            <a href="">Legal & Policies</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script>
+      const apiKey = "27a9f0ae722e13dda66443ebac47ed19";
+
+      function updateBackground(condition) {
+        const weatherImages = document.querySelectorAll(".weather-bg");
+        weatherImages.forEach((img) => img.classList.remove("active"));
+
+        let match = "default";
+        const c = condition.toLowerCase();
+
+        if (c.includes("clear")) match = "sunny";
+        else if (c.includes("cloud")) match = "cloudy";
+        else if (c.includes("rain")) match = "rainy";
+        else if (c.includes("storm") || c.includes("thunder")) match = "stormy";
+
+        const selected = document.querySelector(`.weather-bg.${match}`);
+        if (selected) selected.classList.add("active");
+      }
+
+      async function getWeather() {
+        const location =
+          document.getElementById("locationInput").value || "Manila";
+
+        try {
+          const res = await fetch(
+            `https://api.openweathermap.org/data/2.5/forecast?q=${location}&units=metric&appid=${apiKey}`
+          );
+          const data = await res.json();
+
+          if (!data.city) {
+            alert("Location not found!");
+            return;
+          }
+
+          const city = `${data.city.name}, ${data.city.country}`;
+          document.getElementById("city").textContent = city;
+
+          const today = new Date().toLocaleDateString("en-US", {
+            month: "long",
+            day: "numeric",
+            year: "numeric",
+          });
+          document.getElementById("date").textContent = today;
+
+          const current = data.list[0];
+          const condition = current.weather[0].main;
+          const icon = current.weather[0].icon;
+
+          document.getElementById("weatherMain").textContent = condition;
+          document.getElementById("temp").textContent = `${Math.round(
+            current.main.temp
+          )}°C`;
+
+          document.getElementById(
+            "weatherIcon"
+          ).src = `https://openweathermap.org/img/wn/${icon}@2x.png`;
+          document.getElementById("weatherIcon").alt = `${condition} icon`;
+
+          updateBackground(condition);
+
+          const forecastContainer = document.getElementById("forecast");
+          forecastContainer.innerHTML = "";
+
+          for (let i = 0; i < 6; i++) {
+            const item = data.list[i];
+            const time = new Date(item.dt_txt).getHours();
+            const temp = Math.round(item.main.temp);
+            const desc = item.weather[0].main;
+
+            const div = document.createElement("div");
+            div.className = "forecast-block";
+            div.innerHTML = `
+          <h4>${time}:00</h4>
+          <p>${desc}</p>
+          <p>${temp}°C</p>
+        `;
+            forecastContainer.appendChild(div);
+          }
+        } catch (err) {
+          alert("Error fetching weather data.");
+          console.error(err);
+        }
+      }
+
+      window.onload = getWeather;
+    </script>
+  </body>
+</html>

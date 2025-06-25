@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="agriprofile.css">
+    <link rel="icon" href="../images/home-logo.png" />
+    <link rel="stylesheet" href="../top-bar.css" />
+    <script src="../topbar.js"></script>
+    <title>AniMo.ph</title>
+    <link rel="stylesheet" href="agriprofile.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="top-bar">
+      <div class="top-bar-left">
+        <span><i class="fas fa-phone"></i> +00 123 456 8910</span>
+        <span><i class="fas fa-envelope"></i> animoph@gmail.com</span>
+      </div>
+      <div class="top-bar-right">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+
+    <nav> 
+      <ul class="sidebar">
+        <li onclick="hideSidebar()">
+          <a href="#"><i class="bx bx-x"></i></a>
+          <hr />
+        </li>
+        <li class="hideOnPC">
+          <a href="../index.html">Home</a>
+          <hr />
+        </li>
+        <li class="hideOnPC">
+          <a href="../agriabout.html">About Us</a>
+          <hr />
+        </li>
+        <li class="hideOnPC">
+          <a href="../agri weather/agriweather.html">Weather</a>
+          <hr />
+        </li>
+        <li class="hideOnPC">
+          <a href="../loan.html">Loan</a>
+          <hr />
+        </li>
+        <li class="hideOnPC">
+          <a href="../agribuy.html">Buy</a>
+          <hr />
+        </li>
+        <li class="hideOnPC">
+          <a href="../agrisell.html">Sell</a>
+          <hr />
+        </li>
+        <li>
+          <a href="../Agri profilr/agriprofile.html" class="active">Profile</a>
+        </li>
+        <hr />
+        
+        <li><a href="../Agri News/agrinews.html">Gov't Updates</a></li>
+        <hr />
+        <li><a href="../Agri Services/agriservices.html">AniMo Services</a></li>
+        <hr />
+        <li>
+          <a href="../Agri Learning/agrilearning.html">Learning Hub / Guides</a>
+        </li>
+        <hr />
+        <li><a href="../agrifeedback.html">Feedback</a></li><hr>
+        <li>
+          <a href="../adminLogin.html">Admin</a>
+        </li>
+        <hr>
+        <li><a href="../index.html">Log Out</a></li>
+        <hr />
+      </ul>
+
+      <ul>
+        <li id="logo">
+          <a href="#"><img src="../images/home-logo.png" alt="logo" /></a>
+        </li>
+        <li class="hideOnMobile"><a href="../index.html">Home</a></li>
+        <li class="hideOnMobile"><a href="../agriabout.html">About Us</a></li>
+        <li class="hideOnMobile">
+          <a href="../agri weather/agriweather.html">Weather</a>
+        </li>
+        <li class="hideOnMobile"><a href="../loan.html">Loan</a></li>
+        <li class="hideOnMobile"><a href="../agribuy.html">Buy</a></li>
+        <li class="hideOnMobile"><a href="../agrisell.html">Sell</a></li>
+        <li onclick="showSidebar()">
+          <a href="#"><i class="bx bx-menu"></i></a>
+        </li>
+      </ul>
+    </nav>
+    
+<div class="dashboard">
+    <div class="left-column">
+        <div class="pfp">
+            <img src="pfp profile.svg" id="profile">
+            <h3>ERNIE GATCHITORENA</h3>
+            <p>User Role: Farmer</p>
+            <br>
+            <button>EDIT PROFILE <img src="edit_square_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png"></button>
+        </div>
+    </div>
+
+    <div class="middle-column">
+        <div class="pfpA">
+            <p class="userP">User Details</p>
+            <br>
+            <p><b>Contact Number:</b></p>
+            <p id="contact-number">[Not set]</p>
+            <br>
+            <p><b>Location / Barangay:</b></p>
+            <p id="location">[Not set]</p>
+            <br>
+            <p><b>Timezone:</b></p>
+            <p>Asia/Manila</p>
+            <br>
+            <p><b>RSBSA Number: (only shown if Farmer)</b></p>
+            <p id="rsbsa-number">[Not set]</p>
+            <br>
+            <p><b>Account Status:</b></p>
+            <p id="account-status">Pending</p>
+        </div>
+
+        <div class="pfpB">
+            <p class="userP">Activity Overview</p>
+            <a href="">My Orders / Buyers</a>
+            <br>
+            <a href="">My Listing (visible if Farmer)</a>
+            <br>
+            <a href="">Saved Products / Bookmarked Farms</a>
+            <br>
+            <a href="">Transaction History</a>
+            <br>
+            <a href="">Messsages & Inquiries</a>
+        </div>
+
+        <div class="pfpC">
+            <p class="userP">Documents & Verfication</p>
+            <br>
+            <p>RSBSA Certificate (for farmers)</p>
+            <p>Valid ID Uploaded</p>
+            <p>Business Permit (optional for agri-entrepeneurs)</p>
+            <br>
+            <button>Upload / Update Documents</button>
+        </div>
+
+        <div class="pfpD">
+            <p class="userP">Help & Support</p>
+            <a href="">FAQs</a>
+            <br>
+            <a href="">Contact Support</a>
+            <br>
+            <a href="">Privacy Policy & Terms</a>
+        </div>
+    </div>
+
+    <div class="right-column">
+        <div class="pfpE">
+            <p class="userP">Settings</p>
+            <a href="">Change Password</a>
+            <br>
+            <a href="">Language Preference</a>
+            <br>
+            <a href="">Notification Preference</a>
+            <br>
+            <a href="">Download My Data</a>
+            <br>
+            <a href="">Delete Account</a>
+        </div>
+
+        <div class="pfpF">
+            <p class="userP"></p>
+            <br>
+            <p><b>QR code for mobile app access</b></p>
+            <br>
+            <p>Scan the QR code with your mobile app and you will be automatically logged in. The QR code will expire in 10 mis</p>
+            <br>
+            <button>View QR Code</button>
+            <br>
+            <p>This site has mobile app access enabled.</p>
+            <br>
+            <a href="">Download the mobile app</a>
+        </div>
+    </div>
+</div>
+
+</div>
+    <footer class="footer">
+      <hr />
+      <div>
+        <div class="footer-left">
+          <p>Copyright © 2025 AniMo.Ph. All Rights Reserved.</p>
+        </div>
+        <div class="footer-right">
+          <p>
+            <a href="#">Terms of Use</a> | <a href=""> Privacy Policy</a> |
+            <a href="">Legal & Policies</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const profileName = localStorage.getItem("loggedInName");
+      const rsbsaNumber = localStorage.getItem("loggedInRSBSA");
+    
+      if (profileName && rsbsaNumber) {
+        let submitted = JSON.parse(localStorage.getItem("submittedProfileRecords")) || [];
+    
+        
+        const alreadyExists = submitted.some(entry =>
+          entry.name === profileName && entry.rsbsa === rsbsaNumber
+        );
+    
+        if (!alreadyExists) {
+          submitted.push({ name: profileName, rsbsa: rsbsaNumber });
+          localStorage.setItem("submittedProfileRecords", JSON.stringify(submitted));
+        }
+      }
+    </script>
+    
+
+
+    <script src="../profile.js"></script>
+</body>
+</html>

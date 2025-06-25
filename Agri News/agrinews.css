@@ -1,0 +1,228 @@
+
+.newsMain {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+  }
+  
+ 
+  .newsMain h3 {
+    background-color: #2d6a30;
+    color: white;
+    padding: 10px 20px;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+  
+ 
+  .news-item {
+    display: flex;
+    gap: 15px;
+    background-color: #F7FFEF;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    border-radius: 4px;
+  }
+  
+ 
+  .news-item img {
+    width: 200px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 3px;
+  }
+  
+ 
+  .news-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+ 
+  .news-content p {
+    margin: 5px 0;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  
+ 
+  .news-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+  }
+  
+ 
+  .newsend {
+    font-size: 13px;
+    color: #008000;
+  }
+  
+ 
+  .news-footer button {
+    background-color: #2d6a30;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    font-size: 13px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .news-footer button:hover {
+    background-color: #246126;
+  }
+  
+ 
+  @media (max-width: 768px) {
+    .news-item {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .news-item img {
+      width: 100%;
+      height: auto;
+    }
+  
+    .news-footer {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+  
+    .news-footer button {
+      align-self: flex-end;
+    }
+  }
+
+ 
+  .govnewsS {
+    background-color: #f0f0f0;
+    padding-bottom: 40px;
+  }
+  
+  .govnewsS h3 {
+    background-color: #2d7e32;
+    color: white;
+    font-size: 26px;
+    font-weight: bold;
+    padding: 16px 0;
+    margin: 0;
+    text-align: center;
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+  }
+  
+  .newssourcepic {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px 20px;
+  }
+  
+  .logo-card {
+    width: 260px;
+    height: 160px;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  }
+  
+  .logo-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  
+  
+  .nums {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 0;
+    clear: both;
+    gap: 20px;
+  }
+  
+  
+  .nums button {
+    padding: 8px 16px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    background-color: white;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+  }
+  
+  .nums button:hover,
+  .nums button:focus {
+    background-color: #ffe071;
+    border-color: #5ca145;
+  }
+  
+  .nums button:first-child {
+    background-color: #ffe071;
+    font-weight: bold;
+  }
+  
+  .equip {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right, #2c7a2c 0%, #c5cc32 100%);
+  }
+  
+  .equip-content {
+    width: 50%;
+    padding-left: 3rem;
+    color: white;
+  }
+  
+  .equip-content h4 {
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .equip-content button {
+    padding: 16px 28px; 
+    background: white;
+    border-radius: 30px;
+    border: none;
+    font-size: 1.1rem; 
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+  }
+  
+  .equip-image {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .equip-image img.tractor {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    margin-bottom: 4rem;
+  }
+  

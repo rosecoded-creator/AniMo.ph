@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Add Product</title>
+  <link rel="stylesheet" href="productAdd.css" />
+</head>
+<body>
+  <div class="form-container">
+    <h2>Add New Product</h2>
+    <form id="productForm">
+      <input type="text" placeholder="Product Name" id="productName" required />
+
+      <select id="productType" required>
+        <option value="">Select Type</option>
+        <option value="vegetables">Vegetables</option>
+        <option value="crops">Crops</option>
+        <option value="supplies">Supplies</option>
+      </select>
+
+      <div class="image-input">
+        <img id="previewImage" src="images/camera.svg" alt="Preview" />
+        <input type="file" id="productImage" accept="image/*" required />
+      </div>
+
+      <input type="text" placeholder="Price" id="productPrice" required />
+      <input type="text" placeholder="Location" id="productLocation" required />
+      <input type="text" placeholder="Timeline (e.g. 3 Weeks ago)" id="productTimeline" required />
+      <button type="submit">Add</button>
+    </form>
+  </div>
+
+  <script>
+    
+    document.getElementById("productImage").addEventListener("change", function () {
+      const file = this.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          document.getElementById("previewImage").src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+
+    
+    document.getElementById("productForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById("productName").value;
+      const type = document.getElementById("productType").value;
+      const price = document.getElementById("productPrice").value;
+      const location = document.getElementById("productLocation").value;
+      const timeline = document.getElementById("productTimeline").value;
+      const imageFile = document.getElementById("productImage").files[0];
+
+      const reader = new FileReader();
+      reader.onloadend = function () {
+        const newProduct = {
+          name,
+          type,
+          price,
+          location,
+          timeline,
+          image: reader.result
+        };
+
+        const stored = JSON.parse(localStorage.getItem("myListings")) || [];
+        stored.push(newProduct);
+        localStorage.setItem("myListings", JSON.stringify(stored));
+
+        const transactions = JSON.parse(localStorage.getItem("myTransactions")) || [];
+        const orderId = "ORD" + String(Date.now()).slice(-6);
+        const today = new Date().toLocaleDateString("en-PH");
+        transactions.push({
+          orderId,
+          date: today,
+          type: newProduct.name,
+          amount: newProduct.price,
+          status: "pending"
+        });
+        localStorage.setItem("myTransactions", JSON.stringify(transactions));
+
+
+        alert("Product added!");
+        window.location.href = "agriactivity.html";
+      };
+
+      if (imageFile) {
+        reader.readAsDataURL(imageFile);
+      }
+    });
+
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AniMo.ph</title>
+    <link rel="icon" href="./images/home-logo.png">
+    <link rel="stylesheet" href="./buy-top-bar.css">
+    <link rel="stylesheet" href="./buy-content-one.css">
+    <link rel="stylesheet" href="./buy-content-two.css">
+    <link rel="stylesheet" href="./buy-content-three.css">
+    <link rel="stylesheet" href="./buy-checkout.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <script src="./buy.js"></script>
+</head>
+<body>
+
+     <div class="top-bar">
+        <div class="top-bar-left">
+            <span><i class="fas fa-phone"></i> +00 123 456 8910</span>
+            <span><i class="fas fa-envelope"></i> animoph@gmail.com</span>
+        </div>
+        <div class="top-bar-right">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+    </div>
+    
+    <nav>
+        <ul class="sidebar">
+            <li onclick=hideSidebar()><a href="#" ><i class='bx bx-x'></i></a><hr></li>
+            <li class="hideOnPC"><a href="./agrihome.html" >Home</a><hr></li>
+            <li class="hideOnPC"><a href="./agriabout.html" >About Us</a><hr></li>
+            <li class="hideOnPC"><a href="./agri weather/agriweather.html" >Weather</a><hr></li>
+            <li class="hideOnPC"><a href="./loan.html" >Loan</a><hr></li>
+            <li class="hideOnPC"><a href="./agribuy.html" class="active">Buy</a><hr></li>
+            <li class="hideOnPC"><a href="./agrisell.html" >Sell</a><hr></li>
+            <li><a href="./Agri profilr/agriprofile.html" >Profile</a></li><hr>
+            <li><a href="./agriActivity.html" >My Activity</a></li><hr>
+            <li><a href="./Agri News/agrinews.html" >Gov't Updates</a></li><hr>
+            <li><a href="./Agri Services/agriservices.html">AniMo Services</a></li><hr>
+            <li><a href="./Agri Learning/agrilearning.html">Learning Hub / Guides</a></li><hr>
+            <li><a href="agrifeedback.html">Feedback</a></li><hr>
+            <li><a href="../adminLogin.html">Admin</a></li><hr>
+            <li><a href="./agrihome.html">Log Out</a></li><hr>
+        </ul>
+
+        <ul>
+            <li id="logo"><a href="#" ><img src = "./images/home-logo.png" alt="logo"></a></li>
+            <li class="hideOnMobile"><a href="./agrihome.html" >Home</a></li>
+            <li class="hideOnMobile"><a href="./agriabout.html" >About Us</a></li>
+            <li class="hideOnMobile"><a href="./agri weather/agriweather.html" >Weather</a></li>
+            <li class="hideOnMobile"><a href="./loan.html" >Loan</a></li>
+            <li class="hideOnMobile"><a href="./agribuy.html" class="active">Buy</a></li>
+            <li class="hideOnMobile"><a href="./agrisell.html" >Sell</a></li>
+            <li onclick=showSidebar()><a href="#" ><i class='bx bx-menu'></i></a></li>
+        </ul>
+    </nav>
+
+
+    <div class="content-one">
+        
+        <div class="title">
+            <img src="./images/Buy/buy-photo-1.png" alt="" class="background">
+            <h2>Welcome to the Marketplace</h2>
+            <p>Connecting You to Quality Harvests from Filipino Farmers.</p>
+        </div>
+
+        <div class="menu-container">
+            <form action="">
+
+                <div class="option">
+                    <label for="search-produce">Search Produce:</label>
+                    <input type="text" id="search-produce" placeholder="Search Produce...">
+                </div>
+
+
+                <div class="option">
+                    <label for="produce-category">Produce Category:</label>
+                    <select id="produce-category">
+                        <option value="" disabled selected>Select Category</option>
+                        <option value="fruits">Fruits</option>
+                        <option value="vegetables">Vegetables</option>
+                        <option value="grains">Grains</option>
+                        <option value="dairy">Dairy</option>
+                    </select>
+                </div>
+
+
+                <div class="option">
+                    <label for="produce-subcategory">Produce Sub Category:</label>
+                    <select id="produce-subcategory">
+                        <option value="" disabled selected>Select Sub-Category</option>
+                        <option value="citrus">Citrus Fruits</option>
+                        <option value="leafy">Leafy Greens</option>
+                        <option value="root">Root Vegetables</option>
+                        <option value="whole-grain">Whole Grains</option>
+                    </select>
+                </div>
+
+             
+                <div class="option">
+                    <label for="produce-type">Type:</label>
+                    <select id="produce-type">
+                        <option value="" disabled selected>Select Type</option>
+                        <option value="fresh">Fresh</option>
+                        <option value="frozen">Frozen</option>
+                        <option value="organic">Organic</option>
+                        <option value="conventional">Conventional</option>
+                    </select>
+                </div>
+
+                <div class="option">
+                    <label for="location">Location:</label>
+                    <input type="text" id="location" placeholder="Enter your location...">
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <div class="content-two">
+        <h2><i class='bx bx-cart-alt' ></i> PRODUCE MARKET</h2>
+        
+        <div>
+            <div class="shop">
+                <p><i class='bx bx-cart-alt' ></i> Your Cart</p>
+                <div class="cart-container">
+                    <div class="shop-head">
+                        <img src="./images/home-logo.png" alt="">
+                        <h4>AniMo Vegetables</h4>
+                    </div>
+
+                    <div class="item-container">
+                        
+                    </div>
+
+                    <p>
+                        SUB Total: ₱ <span id="subtotal">0.00</span> <br>
+                        Delivery Charges: ₱ <span id="delivery">50.00</span> <br>
+                        <span>
+                            Order Total: ₱ <span id="ordertotal">0.00</span>
+                        </span>
+                    </p>
+                </div>
+                
+                <a href="./checkout.html" class="checkout-pop" id="checkout-pop">Go to Checkout</a>
+            </div>
+
+            <div class="top-sellers">
+                <h3><i class='bx bx-trophy'></i> TOP SELLERS</h3>
+
+                <div class="grid">
+                    <button class="item" data-img="./images/Buy/buy-cabbage.png" data-name="LETTUCE" data-price="₱ 60.00 1KG / HEAD" data-location="Metro Manila" data-time="3 Weeks 1 day ago">
+                        <div>
+                            <img src="./images/Buy/buy-cabbage.png" alt="">
+                            <p>
+                                LETTUCE <br>
+                                ₱ 60.00 1KG / HEAD <br> 
+                                <i class='bx bx-map' ></i> Metro Manila <br>
+                                <i class='bx bx-time'></i> 3 Weeks 1 day ago
+                            </p>
+                        </div>
+                    </button>
+                    <button class="item" data-img="./images/Buy/buy-carrots.png" data-name="CARROTS" data-price="₱ 80.00 PER KILO" data-location="Metro Manila" data-time="1 Month 3 weeks ago">
+                        <div>
+                            <img src="./images/Buy/buy-carrots.png" alt="">
+                            <p>
+                                CARROTS <br>
+                                ₱ 80.00 PER KILO <br> 
+                                <i class='bx bx-map' ></i> Metro Manila <br>
+                                <i class='bx bx-time'></i> 1 Month 3 weeks ago
+                            </p>
+                        </div>
+                    </button>
+                    <button class="item" data-img="./images/Buy/buy-tomato.png" data-name="TOMATOES" data-price="₱ 180.00 PER KILO" data-location="Metro Manila" data-time="1 Month 4 weeks ago">
+                        <div>
+                            <img src="./images/Buy/buy-tomato.png" alt="">
+                            <p>
+                                TOMATOES <br>
+                                ₱ 180.00 PER KILO <br> 
+                                <i class='bx bx-map' ></i> Metro Manila <br>
+                                <i class='bx bx-time'></i> 1 Month 4 weeks ago
+                            </p>
+                        </div>
+                    </button>
+                    <button class="item" data-img="./images/Buy/buy-rice.png" data-name="RICE" data-price="₱ 45.00 PER KILO" data-location="Metro Manila" data-time="2 Weeks 2 days ago">
+                        <div>
+                            <img src="./images/Buy/buy-rice.png" alt="">
+                            <p>
+                                RICE <br>
+                                ₱ 45.00 PER KILO <br> 
+                                <i class='bx bx-map' ></i> Metro Manila <br>
+                                <i class='bx bx-time'></i> 2 Weeks 2 days ago
+                            </p>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>  
+    </div>
+
+    <div class="content-three">
+        <h2><i class='bx bx-grid-alt' ></i> Market Catalog</h2>
+        
+        <div class="first-row">
+            <a href="#">
+                <img src="./images/Buy/buy-fruits.png" alt="">
+            </a>
+            <a href="#">
+                <img src="./images/Buy/buy-crops.png" alt="">
+            </a>
+            <a href="#">
+                <img src="./images/Buy/buy-spices.png" alt="">
+            </a>
+        </div>
+
+        <div class="second-row">
+            <a href="#">
+                <img src="./images/Buy/buy-beans.png" alt="">
+            </a>
+            <a href="#">
+                <img src="./images/Buy/buy-nuts.png" alt="">
+            </a>
+            <a href="#">
+                <img src="./images/Buy/buy-supplies.png" alt="">
+            </a>
+        </div>
+    </div>
+
+    <div class="content-three-2">
+        <div class="fruits market">
+            <h2><i class='bx bx-cart-alt' ></i> FRUITS & VEGETABLES</h2>
+            
+            <div>
+                <button class="item" data-img="./images/Buy/buy-cabbage.png" data-name="LETTUCE" data-price="₱ 60.00 1KG / HEAD" data-location="Metro Manila" data-time="3 Weeks 1 day ago">
+                    <div>
+                        <img src="./images/Buy/buy-cabbage.png" alt="">
+                        <p>
+                            LETTUCE <br>
+                            ₱ 60.00 1KG / HEAD <br> 
+                            <i class='bx bx-map' ></i> Metro Manila <br>
+                            <i class='bx bx-time'></i> 3 Weeks 1 day ago
+                        </p>
+                    </div>
+                </button>
+                <button class="item" data-img="./images/Buy/buy-carrots.png" data-name="CARROTS" data-price="₱ 80.00 PER KILO" data-location="Metro Manila" data-time="1 Month 3 weeks ago">
+                    <div>
+                        <img src="./images/Buy/buy-carrots.png" alt="">
+                        <p>
+                            CARROTS <br>
+                            ₱ 80.00 PER KILO <br> 
+                            <i class='bx bx-map' ></i> Metro Manila <br>
+                            <i class='bx bx-time'></i> 1 Month 3 weeks ago
+                        </p>
+                    </div>
+                </button>
+                <button class="item" data-img="./images/Buy/buy-tomato.png" data-name="TOMATOES" data-price="₱ 180.00 PER KILO" data-location="Metro Manila" data-time="1 Month 4 weeks ago">
+                    <div>
+                        <img src="./images/Buy/buy-tomato.png" alt="">
+                        <p>
+                            TOMATOES <br>
+                            ₱ 180.00 PER KILO <br> 
+                            <i class='bx bx-map' ></i> Metro Manila <br>
+                            <i class='bx bx-time'></i> 1 Month 4 weeks ago
+                        </p>
+                    </div>
+                </button>
+
+                <button class="see-more">
+                    <div><i class='bx bxs-chevron-right'></i></div>See More
+                </button>
+            </div>
+        </div>
+
+        <div class="fruits market">
+            <h2><i class='bx bx-cart-alt' ></i> CROPS</h2>
+            
+            <div>
+                <button class="item" data-img="./images/Buy/buy-rice.png" data-name="RICE" data-price="₱ 45.00 PER KILO" data-location="Metro Manila" data-time="2 Weeks 2 days ago">
+                    <div>
+                        <img src="./images/Buy/buy-rice.png" alt="">
+                        <p>
+                            RICE <br>
+                            ₱ 45.00 PER KILO <br> 
+                            <i class='bx bx-map' ></i> Metro Manila <br>
+                            <i class='bx bx-time'></i> 2 Weeks 2 days ago
+                        </p>
+                    </div>
+                </button>
+                <button class="item" data-img="./images/Buy/buy-wheat.png" data-name="WHEAT" data-price="₱ 180.00 PER KILO" data-location="Metro Manila" data-time="1 Month 4 weeks ago">
+                    <div>
+                        <img src="./images/Buy/buy-wheat.png" alt="">
+                        <p>
+                            WHEAT <br>
+                            ₱ 180.00 PER KILO <br> 
+                            <i class='bx bx-map' ></i> Metro Manila <br>
+                            <i class='bx bx-time'></i> 1 Month 4 weeks ago
+                        </p>
+                    </div>
+                </button>
+                <button class="item" data-img="./images/Buy/buy-corn.png" data-name="CORN" data-price="₱ 70.00 PER KILO" data-location="Metro Manila" data-time="2 weeks ago">
+                    <div>
+                        <img src="./images/Buy/buy-corn.png" alt="">
+                        <p>
+                            CORN <br>
+                            ₱ 70.00 PER KILO <br> 
+                            <i class='bx bx-map' ></i> Metro Manila <br>
+                            <i class='bx bx-time'></i> 2 weeks ago
+                        </p>
+                    </div>
+                </button>
+
+                <button class="see-more">
+                    <div><i class='bx bxs-chevron-right'></i></div>See More
+                </button>
+            </div>
+        </div>
+
+        <div class="fruits market">
+            <h2><i class='bx bx-cart-alt' ></i> SUPPLIES</h2>
+            
+            <div>
+                <button class="item" data-img="./images/Buy/buy-hydro-copper.png" data-name="NutriHydro Copper Sulfate" data-price="₱ 225.00 PER KILO" data-location="Metro Manila" data-time="">
+                <div>
+                    <img src="./images/Buy/buy-hydro-copper.png" alt="">
+                    <p>
+                        NutriHydro Copper <br>
+                        Sulfate <br>
+                        ₱ 225.00 PER KILO <br> 
+                        <i class='bx bx-map' ></i> Metro Manila <br>
+                    </p>
+                </div>
+            </button>
+            <button class="item" data-img="./images/Buy/buy-hydro-growth.png" data-name="NutriHydro Growth Nutrient" data-price="₱ 225.00 PER KILO" data-location="Metro Manila" data-time="">
+                <div>
+                    <img src="./images/Buy/buy-hydro-growth.png" alt="">
+                    <p>
+                        NutriHydro Growth <br>
+                        Nutrient <br>
+                        ₱ 225.00 PER KILO <br> 
+                        <i class='bx bx-map' ></i> Metro Manila <br>
+                    </p>
+                </div>
+            </button>
+            <button class="item" data-img="./images/Buy/buy-tray.png" data-name="Plant Growing Seedling Tray" data-price="₱ 100.00 PER KILO" data-location="Metro Manila" data-time="">
+                <div>
+                    <img src="./images/Buy/buy-tray.png" alt="">
+                    <p>
+                        Plant Growing br<br>
+                        Seedling Tray <br>
+                        ₱ 100.00 PER KILO <br> 
+                        <i class='bx bx-map' ></i> Metro Manila <br>
+                    </p>
+                </div>
+            </button>
+
+                <button class="see-more">
+                    <div><i class='bx bxs-chevron-right'></i></div>See More
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="checkout" id="step1">
+    <h2>Check Out 1/3</h2>
+
+    <div class="checkout-details">
+      <div>
+        <span><i class='bx bx-map-pin'></i></span>
+        <i class='bx bx-chevrons-right'></i>
+        <i class='bx bx-basket'></i>
+        <i class='bx bx-chevrons-right'></i>
+        <i class='bx bx-money'></i>
+      </div>
+      <div>
+        <p>
+          <i class='bx bx-check-circle'></i> [Buyer's Name] <br>
+          Metro Manila, Philippines <br>
+          2002 <br>
+          +63 9994444333
+        </p>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="active">
+        <h3><i class='bx bx-building'></i> Work</h3>
+        <p>
+          Deloitte, Philippines <br>
+          +69 123901233 <br>
+          BGC, TAGIG CITY PHILIPPINES
+        </p>
+      </div>
+      <div>
+        <h3><i class='bx bx-home-alt-2'></i> Home</h3>
+        <p>
+          Razzo Household <br>
+          +69 123901233 <br>
+          BACOOR, CAVITE PHILIPPINES
+        </p>
+      </div>
+    </div>
+
+    <div class="buttons" style="justify-content: flex-end; padding-bottom: 1.5rem;">
+      <button class="continue-btn">Continue</button>
+    </div>
+  </div>
+
+  <div class="checkout" id="step2">
+    <h2>Check Out 2/3</h2>
+
+    <div class="checkout-details">
+      <div>
+        <i class='bx bx-map-pin'></i>
+        <i class='bx bx-chevrons-right'></i>
+        <span><i class='bx bx-basket'></i></span>
+        <i class='bx bx-chevrons-right'></i>
+        <i class='bx bx-money'></i>
+      </div>
+      <div>
+        <p>
+          <i class='bx bx-check-circle'></i> [Buyer's Name] <br>
+          Metro Manila, Philippines <br>
+          2002 <br>
+          +63 9994444333
+        </p>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="item-container">
+
+      </div>
+    </div>
+
+    <div class="buttons">
+      <button class="back">Back</button>
+      <button class="continue-btn">Continue</button>
+    </div>
+  </div>
+
+  <div class="checkout" id="step3">
+    <h2>Check Out 3/3</h2>
+
+    <div class="checkout-details">
+      <div>
+        <i class='bx bx-map-pin'></i>
+        <i class='bx bx-chevrons-right'></i>
+        <i class='bx bx-basket'></i>
+        <i class='bx bx-chevrons-right'></i>
+        <span><i class='bx bx-money'></i></span>
+      </div>
+      <div>
+        <p>
+          <i class='bx bx-check-circle'></i> [Buyer's Name] <br>
+          Metro Manila, Philippines <br>
+          2002 <br>
+          +63 9994444333
+        </p>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="active">
+        <h3><i class='bx bxs-truck' ></i> Cash On Delivery</h3>
+        <p>
+          Additional 20 Charges for COD services
+        </p>
+      </div>
+      <div>
+        <h3><i class='bx bxs-credit-card-front' ></i> Credit Card</h3>
+        <p>
+          Marco Razzo <br>
+          4567 **** **** ****
+        </p>
+      </div>
+    </div>
+
+    <div class="buttons">
+      <button class="back">Back</button>
+      <button class="checkout-btn">Checkout</button>
+    </div>
+  </div>
+
+    <footer class="footer">
+        <hr>
+        <div>
+            <div class="footer-left">
+                <p>Copyright © 2025 AniMo.Ph. All Rights Reserved.</p>
+            </div>
+            <div class="footer-right">
+                <p>
+                    <a href="#">Terms of Use</a> |
+                    <a href=""> Privacy Policy</a> |
+                    <a href="">Legal & Policies</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./topbar.js"></script>
+</body>
+</html>

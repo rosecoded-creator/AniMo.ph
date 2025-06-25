@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AniMo.ph</title>
+  <link rel="icon" href="./images/home-logo.png">
+  <link rel="stylesheet" href="./top-bar.css">
+  <link rel="stylesheet" href="agriloanapp.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet"> 
+  <script src="./topbar.js" defer></script>
+</head>
+<body>
+
+  
+  <div class="top-bar">
+    <div class="top-bar-left">
+      <span><i class="fas fa-phone"></i> +00 123 456 8910</span>
+      <span><i class="fas fa-envelope"></i> animoph@gmail.com</span>
+    </div>
+    <div class="top-bar-right">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+    </div>
+  </div>
+
+ 
+  <nav>
+    <ul class="sidebar">
+      <li onclick="hideSidebar()"><a href="#"><i class='bx bx-x'></i></a><hr></li>
+      <li class="hideOnPC"><a href="./agrihome.html">Home</a><hr></li>
+      <li class="hideOnPC"><a href="./agriabout.html">About Us</a><hr></li>
+      <li class="hideOnPC"><a href="./agri weather/agriweather.html">Weather</a><hr></li>
+      <li class="hideOnPC"><a href="./loan.html" class="active">Loan</a><hr></li>
+      <li class="hideOnPC"><a href="./agribuy.html">Buy</a><hr></li>
+      <li class="hideOnPC"><a href="./agrisell.html">Sell</a><hr></li>
+      <li><a href="./Agri profilr/agriprofile.html">Profile</a></li><hr>
+      <li><a href="./Agri News/agrinews.html">Gov't Updates</a></li><hr>
+      <li><a href="./Agri Services/agriservices.html">AniMo Services</a></li><hr>
+      <li><a href="./Agri Learning/agrilearning.html">Learning Hub / Guides</a></li><hr>
+      <li><a href="agrifeedback.html">Feedback</a></li><hr>
+      <li><a href="../adminLogin.html">Admin</a></li><hr>
+      <li><a href="./index.html">Log Out</a></li><hr>
+    </ul>
+
+    <ul>
+      <li id="logo"><a href="#"><img src="./images/home-logo.png" alt="AniMo Logo"></a></li>
+      <li class="hideOnMobile"><a href="./index.html">Home</a></li>
+      <li class="hideOnMobile"><a href="./agriabout.html">About Us</a></li>
+      <li class="hideOnMobile"><a href="./agri weather/agriweather.html">Weather</a></li>
+      <li class="hideOnMobile"><a href="./loan.html" class="active">Loan</a></li>
+      <li class="hideOnMobile"><a href="./agribuy.html">Buy</a></li>
+      <li class="hideOnMobile"><a href="./agrisell.html">Sell</a></li>
+      <li onclick="showSidebar()"><a href="#"><i class='bx bx-menu'></i></a></li>
+    </ul>
+  </nav>
+
+ 
+  <div class="container">
+    <form class="main-form" action="#" method="post" enctype="multipart/form-data">
+      <div class="form-section">
+        <h2>LOAN APPLICATION FORM</h2>
+        <p><b>Personal Information</b></p>
+
+        <div class="input-group">
+          <label for="validIdType">Valid ID Type:</label>
+          <select id="validIdType" name="validIdType" required>
+            <option value="" disabled selected>ID Type</option>
+            <option value="rsbsa">RSBSA ID</option>
+            <option value="philsys">PhilSys National ID</option>
+            <option value="passport">Passport ID</option>
+            <option value="license">Driver's License</option>
+            <option value="voter">Voter's ID</option>
+            <option value="postal">Postal ID</option>
+          </select>
+        </div>
+
+        <div class="input-group">
+          <label for="idUpload">Upload Valid ID:</label>
+          <div class="upload-box">
+            <img src="AniMo.ph/images/image.svg" alt="Upload Icon" />
+            <p>Upload Valid ID Here</p>
+          </div>
+          <label for="idUpload" class="custom-file-upload">Choose File</label>
+          <input type="file" id="idUpload" name="idUpload" required>
+        </div>
+
+        <div class="input-group">
+          <label for="contact">Contact No.:</label>
+          <input type="text" id="contact" name="contact" required>
+        </div>
+
+        <div class="address">
+          <div class="input-group-add">
+            <label for="street">Street:</label>
+            <input type="text" id="street" name="street" required>
+          </div>
+
+          <div class="input-group-add">
+            <label for="barangay">Barangay:</label>
+            <input type="text" id="barangay" name="barangay" required>
+          </div>
+
+          <div class="input-group-add">
+            <label for="city">City / Municipality:</label>
+            <input type="text" id="city" name="city" required>
+          </div>
+        </div>
+
+        <br><p><b>Loan Type & Payment Method</b></p>
+
+        <div class="input-group">
+          <label for="loanType">Loan Type:</label>
+          <select id="loanType" name="loanType" required>
+            <option disabled selected>Loans Offered</option>
+            <option value="crop">Crop Production Loan – 6 mo, ₱1,200/mo, Up to ₱7k</option>
+            <option value="tools">Tool Rental Support – 3 mo, ₱2,000/mo, Up to ₱6k</option>
+            <option value="business">Agri-Business Expansion – 12 mo, ₱1,500/mo, Up to ₱18k</option>
+          </select>
+        </div>
+
+        <div class="input-group">
+          <p>Mode of Payment:</p>
+          <div class="pay-methods-align">
+            <div class="pay-method" data-method="bank">
+              <img src="./images/bank.svg" alt="Bank">
+              <label class="pay-method-label">Banks</label>
+            </div>
+            <div class="pay-method" data-method="wallet">
+              <img src="./images/wallet.svg" alt="E-Wallet">
+              <label class="pay-method-label">E-wallet</label>
+            </div>
+            <div class="pay-method" data-method="remit">
+              <img src="./images/envelope-open.svg" alt="Remittance">
+              <label class="pay-method-label">Remittance</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="button-container">
+          <button type="submit">Submit</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+ 
+  <div id="paymentModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Payment Method Details</h2>
+      <p>You selected the Bank payment method. Please answer the form to proceed with payment.</p>
+      <form class="card-form">
+        <div class="form-group">
+          <label for="card-number">Card Number</label>
+          <input type="text" id="card-number" name="card-number" maxlength="19" placeholder="1234 5678 9012 3456" required>
+        </div>
+        <div class="form-row">
+          <div class="form-group half">
+            <label for="exp-date">Expiration Date</label>
+            <input type="text" id="exp-date" name="exp-date" placeholder="MM/YY" pattern="(0[1-9]|1[0-2])\/[0-9]{2}" required>
+          </div>
+          <div class="form-group half">
+            <label for="cvv">CVV</label>
+            <input type="text" id="cvv" name="cvv" maxlength="3" placeholder="123" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="full-name">Full Name on Card</label>
+          <input type="text" id="full-name" name="full-name" placeholder="Juan Dela Cruz" required>
+        </div>
+        <div class="form-group">
+          <label for="partnered-bank">Partnered Bank</label>
+          <select id="partnered-bank" name="partnered-bank" required>
+            <option value="" disabled selected>Select your bank</option>
+            <option value="bpi">BPI</option>
+            <option value="bdo">BDO</option>
+            <option value="metrobank">Metrobank</option>
+            <option value="landbank">LandBank</option>
+            <option value="pnb">PNB</option>
+            <option value="unionbank">UnionBank</option>
+            <option value="securitybank">Security Bank</option>
+          </select>
+        </div>
+        <button type="submit">Confirm</button>
+      </form>
+    </div>
+  </div>
+
+ 
+<div id="ewalletModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('ewalletModal')">&times;</span>
+    <h2>E-Wallet Payment</h2>
+    <p>Please scan the Instapay QR code below to proceed with payment.</p>
+
+      <img src="AniMo.ph\images\randomqr.png" alt="Instapay QR Code">
+
+    <div class="input-group">
+      <label for="loanAmount">Loan Amount (Php)</label>
+      <input type="number" id="loanAmount" placeholder="Enter loan amount" onchange="calculateBill()">
+    </div>
+
+    <div class="input-group">
+      <label for="duration">Duration (Months)</label>
+      <input type="number" id="duration" placeholder="Enter number of months" onchange="calculateBill()">
+    </div>
+
+    <div class="input-group">
+      <label>Monthly Bill</label>
+      <p id="monthlyBill">Php 0.00</p>
+    </div>
+
+    <div class="button-container">
+      <button type="submit" onclick="submitEwalletPayment()">Confirm</button>
+    </div>
+  </div>
+</div>
+
+<div id="remitModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('remitModal')">&times;</span>
+    <h2>Remittance Instructions</h2>
+    <p>Please follow these simple steps to complete your loan payment via remittance.</p>
+
+    <ol>
+      <li>Visit any <strong>Cebuana Lhuillier</strong>, <strong>Palawan Express</strong>, or other supported remittance centers.</li>
+      <li>Provide the following recipient details:
+        <ul style="margin-bottom: 15px">
+          <li><strong>Name:</strong> AniMo Loan Services</li>
+          <li><strong>Mobile No.:</strong> 0912 345 6789</li>
+          <li><strong>Reference Code:</strong> ANI-<span id="refCode"></span></li>
+        </ul>
+      </li>
+      <li>Pay the exact amount as specified in your loan confirmation.</li>
+      <li>Take a clear photo of the transaction receipt and upload it below.</li>
+    </ol>
+
+   <input type="file" id="remitReceipt" style="display: none;" />
+   <label for="remitReceipt" class="custom-file-upload">Upload Here</label>
+
+
+    <div class="button-container">
+      <button type="submit" onclick="submitRemit()">Confirm</button>
+    </div>
+  </div>
+</div>
+
+
+  
+  <footer class="footer">
+    <hr>
+    <div>
+      <div class="footer-left">
+        <p>Copyright © 2025 AniMo.Ph. All Rights Reserved.</p>
+      </div>
+      <div class="footer-right">
+        <p>
+          <a href="#">Terms of Use</a> |
+          <a href="#">Privacy Policy</a> |
+          <a href="#">Legal & Policies</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+
+<script>
+  const loanTypes = {
+    "crop": { duration: 6, monthly: 1200, max: 7200 },
+    "tools": { duration: 3, monthly: 2000, max: 6000 },
+    "business": { duration: 12, monthly: 1500, max: 18000 },
+  };
+
+  function showSidebar() {
+    document.querySelector('.sidebar').style.display = 'flex';
+  }
+
+  function hideSidebar() {
+    document.querySelector('.sidebar').style.display = 'none';
+  }
+
+  function closeModal(id) {
+    document.getElementById(id).style.display = "none";
+  }
+
+  function generateRefCode() {
+    const random = Math.floor(1000 + Math.random() * 9000);
+    document.getElementById("refCode").textContent = random;
+  }
+
+  function setLoanType(type) {
+    const loan = loanTypes[type];
+    if (!loan) return;
+
+    const amountField = document.getElementById("loanAmount");
+    const durationField = document.getElementById("duration");
+
+    if (amountField && durationField) {
+      amountField.value = loan.monthly * loan.duration;
+      durationField.value = loan.duration;
+      calculateBill(); 
+    }
+  }
+
+  function calculateBill() {
+    const amount = parseFloat(document.getElementById("loanAmount").value);
+    const months = parseInt(document.getElementById("duration").value);
+
+    if (!isNaN(amount) && !isNaN(months) && months > 0) {
+      const bill = amount / months;
+      document.getElementById("monthlyBill").textContent = `Php ${bill.toFixed(2)}`;
+    } else {
+      document.getElementById("monthlyBill").textContent = "Php 0.00";
+    }
+  }
+
+  function submitEwalletPayment() {
+    const amount = document.getElementById("loanAmount").value;
+    const months = document.getElementById("duration").value;
+
+    if (!amount || !months || months == 0) {
+      alert("Please fill in loan amount and duration.");
+      return;
+    }
+
+    alert("E-Wallet payment confirmed!");
+    closeModal('ewalletModal');
+  }
+
+  function submitRemit() {
+    const receiptInput = document.getElementById("remitReceipt");
+    const receipt = receiptInput?.files?.[0];
+
+    if (!receipt) {
+      alert("Please upload your receipt.");
+      return;
+    }
+
+    alert("✅ Remittance payment confirmed!\n\n📌 Thank you! Our team will verify your uploaded receipt and notify you once it's approved.");
+    closeModal('remitModal');
+    receiptInput.value = '';
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const mainForm = document.querySelector(".main-form");
+    const bankForm = document.querySelector(".card-form");
+
+    const bankModal = document.getElementById("paymentModal");
+    const ewalletModal = document.getElementById("ewalletModal");
+    const remitModal = document.getElementById("remitModal");
+
+    const closeButtons = document.querySelectorAll(".modal .close");
+    closeButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        btn.parentElement.parentElement.style.display = "none";
+      });
+    });
+
+    window.addEventListener("click", (e) => {
+      if (e.target.classList.contains("modal")) {
+        e.target.style.display = "none";
+      }
+    });
+
+    document.querySelectorAll(".pay-method").forEach(method => {
+      method.addEventListener("click", () => {
+        const selectedMethod = method.dataset.method;
+
+        const loanTypeSelect = document.getElementById("loanType");
+        const selectedLoanType = loanTypeSelect?.value;
+        if (selectedLoanType) setLoanType(selectedLoanType);
+
+        const amountField = document.getElementById("loanAmount");
+        const durationField = document.getElementById("duration");
+
+        if (selectedMethod === "bank") {
+          bankModal.style.display = "block";
+
+          
+          if (amountField && durationField) {
+            amountField.readOnly = false;
+            durationField.readOnly = false;
+          }
+
+        } else if (selectedMethod === "wallet") {
+          ewalletModal.style.display = "block";
+
+        
+          if (amountField && durationField) {
+            amountField.readOnly = true;
+            durationField.readOnly = true;
+          }
+
+        } else if (selectedMethod === "remit") {
+          remitModal.style.display = "block";
+          generateRefCode();
+
+         
+          if (amountField && durationField) {
+            amountField.readOnly = false;
+            durationField.readOnly = false;
+          }
+        }
+      });
+    });
+
+    mainForm?.addEventListener("submit", function (e) {
+      e.preventDefault();
+      alert("Loan application submitted successfully!");
+    });
+
+    bankForm?.addEventListener("submit", function (e) {
+      e.preventDefault();
+      alert("Bank details confirmed!");
+      bankModal.style.display = "none";
+    });
+
+    const loanTypeDropdown = document.getElementById("loanType");
+    if (loanTypeDropdown) {
+      loanTypeDropdown.addEventListener("change", () => {
+        const selectedLoanType = loanTypeDropdown.value;
+        if (selectedLoanType) setLoanType(selectedLoanType);
+      });
+    }
+  });
+
+
+
+  document.querySelector(".main-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    
+    const validId = document.getElementById("validIdType").value;
+    const contact = document.getElementById("contact").value;
+    const street = document.getElementById("street").value;
+    const barangay = document.getElementById("barangay").value;
+    const city = document.getElementById("city").value;
+    const loanType = document.getElementById("loanType").value;
+
+    let paymentMode = "";
+    document.querySelectorAll(".pay-method").forEach(method => {
+      if (method.classList.contains("selected")) {
+        paymentMode = method.dataset.method;
+      }
+    });
+
+    
+    const newLoan = {
+      validId,
+      contact,
+      street,
+      barangay,
+      city,
+      loanType,
+      paymentMode: paymentMode || "not selected"
+    };
+
+    const loanApplications = JSON.parse(localStorage.getItem("loanApplications")) || [];
+    loanApplications.push(newLoan);
+    localStorage.setItem("loanApplications", JSON.stringify(loanApplications));
+
+    alert("✅ Loan application submitted!");
+    this.reset();
+  });
+
+  
+  document.querySelectorAll(".pay-method").forEach(method => {
+    method.addEventListener("click", () => {
+      document.querySelectorAll(".pay-method").forEach(m => m.classList.remove("selected"));
+      method.classList.add("selected");
+    });
+  });
+
+
+
+  
+  const fileInput = document.getElementById("idUpload");
+
+  fileInput.addEventListener("change", function () {
+    const file = this.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        // Check if preview already exists
+        let preview = document.getElementById("idPreview");
+        if (!preview) {
+          preview = document.createElement("img");
+          preview.id = "idPreview";
+          preview.style.maxWidth = "200px";
+          preview.style.marginTop = "10px";
+          preview.style.border = "1px solid #ccc";
+          preview.style.borderRadius = "8px";
+          preview.style.display = "block";
+
+          // Append it under the upload box
+          document.querySelector(".upload-box").appendChild(preview);
+        }
+        preview.src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+  });
+</script>
+
+
+
+</body>
+</html>

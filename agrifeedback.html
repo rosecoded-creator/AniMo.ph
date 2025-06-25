@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AniMo Feedback</title>
+  <link rel="icon" href="../images/home-logo.png">
+  <link rel="stylesheet" href="../top-bar.css">
+  <script src="../topbar.js"></script>
+  <link rel="stylesheet" href="agrifeedback.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet"> 
+</head>
+<body>
+  <div class="top-bar">
+    <div class="top-bar-left">
+        <span><i class="fas fa-phone"></i> +00 123 456 8910</span>
+        <span><i class="fas fa-envelope"></i> animoph@gmail.com</span>
+    </div>
+    <div class="top-bar-right">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+    </div>
+</div>
+
+<nav>
+    <ul class="sidebar">
+        <li onclick=hideSidebar()><a href="#" ><i class='bx bx-x'></i></a><hr></li>
+        <li class="hideOnPC"><a href="../index.html" >Home</a><hr></li>
+        <li class="hideOnPC"><a href="../agriabout.html">About Us</a><hr></li>
+        <li class="hideOnPC"><a href="../agri weather/agriweather.html" >Weather</a><hr></li>
+        <li class="hideOnPC"><a href="../loan.html" >Loan</a><hr></li>
+        <li class="hideOnPC"><a href="../agribuy.html" >Buy</a><hr></li>
+        <li class="hideOnPC"><a href="../agrisell.html" >Sell</a><hr></li>
+        <li><a href="../Agri profilr/agriprofile.html" >Profile</a></li><hr>
+        <li><a href="../Agri News/agrinews.html" >Gov't Updates</a></li><hr>
+        <li><a href="../Agri Services/agriservices.html">AniMo Services</a></li><hr>
+        <li><a href="../Agri Learning/agrilearning.html">Learning Hub / Guides</a></li><hr>
+        <li><a href="agrifeedback.html" class="active">Feedback</a></li><hr>
+        <li><a href="../adminLogin.html">Admin</a></li><hr>
+        <li><a href="../index.html">Log Out</a></li><hr>
+    </ul>
+
+    <ul>
+        <li id="logo"><a href="#" ><img src = "../images/home-logo.png" alt="logo"></a></li>
+        <li class="hideOnMobile"><a href="../index.html" >Home</a></li>
+        <li class="hideOnMobile"><a href="../agriabout.html">About Us</a></li>
+        <li class="hideOnMobile"><a href="../agri weather/agriweather.html" >Weather</a></li>
+        <li class="hideOnMobile"><a href="../loan.html" >Loan</a></li>
+        <li class="hideOnMobile"><a href="../agribuy.html" >Buy</a></li>
+        <li class="hideOnMobile"><a href="../agrisell.html" >Sell</a></li>
+        <li onclick=showSidebar()><a href="#" ><i class='bx bx-menu'></i></a></li>
+    </ul>
+</nav>
+
+  <div class="container">
+    <div class="upperPart">
+        <div class="upperContent">
+          <img src="feedback.gif" alt="Feedback" />
+          <div class="upperText">
+            <h2>Let us know your experience</h2>
+            <p>
+              Your opinion matters to us. Whether you had a great experience or see something we can improve, your voice helps shape the future of this website.
+            </p>
+          </div>
+        </div>
+      </div>
+      
+
+    <div class="lowerPart">
+      <h3>How's your experience with AniMo.ph so far?</h3>
+      <div class="emoji">
+        <div class="emoji-box" data-reaction="verySatisfied">
+          <img src="very satisfied.gif" alt="Very Satisfied" />
+          <h4>Very Satisfied</h4>
+        </div>
+
+        <div class="emoji-box" data-reaction="satisfied">
+          <img src="satisfied.gif" alt="Satisfied" />
+          <h4>Satisfied</h4>
+        </div>
+
+        <div class="emoji-box" data-reaction="neutral">
+          <img src="neutral.gif" alt="Neutral" />
+          <h4>Neutral</h4>
+        </div>
+
+        <div class="emoji-box" data-reaction="dissatisfied">
+          <img src="dissatisfied.gif" alt="Dissatisfied" />
+          <h4>Dissatisfied</h4>
+        </div>
+
+        <div class="emoji-box" data-reaction="veryDissatisfied">
+          <img src="very dissatisfied.gif" alt="Very Dissatisfied" />
+          <h4>Very Dissatisfied</h4>
+        </div>
+      </div>
+
+      <div class="recommendation">
+        <h2>Got any ideas or suggestions for AniMo.ph? We’re all ears</h2>
+
+        <div class="comment">
+          <label for="feedback">Recommendation/Comment:</label><br />
+          <textarea id="feedback" rows="4" placeholder="Type your feedback here..."></textarea>
+          <input type="submit" value="Submit Feedback" onclick="saveFeedback()" />
+        </div>
+
+        <div class="reply">
+          <label for="reply">Reply:</label>
+          <input type="text" id="reply" placeholder="Type a reply..." />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <hr>
+    <div>
+        <div class="footer-left">
+            <p>Copyright © 2025 AniMo.Ph. All Rights Reserved.</p>
+        </div>
+        <div class="footer-right">
+            <p>
+                <a href="#">Terms of Use</a> |
+                <a href=""> Privacy Policy</a> |
+                <a href="">Legal & Policies</a>
+            </p>
+        </div>
+    </div>
+</footer> 
+
+  <script src="agrifeedback.js"></script>
+</body>
+</html>

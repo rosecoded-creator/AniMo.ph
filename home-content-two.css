@@ -1,0 +1,43 @@
+.content-two {
+    display: flex;
+    flex-direction: column;
+    margin: 50px;
+    text-align: center;
+    justify-content: center;
+}
+
+.content-two h2 {
+    color: white;
+    font-size: 3rem;
+    margin: 50px;
+}
+
+.slides {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.slides p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-left: 0;
+    padding: 30px;
+}
+
+.slide-1, .slide-2, .slide-3 {
+    background-color: white;
+    padding: 50px 0px;
+    margin: 30px;
+    border-radius: 10px;
+    color: #165219;
+    box-shadow: 10px 10px 50px black;
+    height: auto;
+    width: 400px;
+}
+
+.slides img {
+    width: 400px;
+}
+

@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AniMo.ph</title>
+    <link rel="stylesheet" href="marketplace.css">
+    <link rel="icon" href="../images/home-logo.png">
+    <link rel="stylesheet" href="../top-bar.css">
+    <script src="../topbar.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet"> 
+
+
+
+    <style>
+    
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-top: 10px;
+      }
+      th, td {
+        border: 1px solid #aaa;
+        padding: 8px;
+        text-align: center;
+      }
+      button {
+        margin: 2px;
+      }
+      input[type="text"] {
+        width: 100%;
+        box-sizing: border-box;
+      }
+      .section {
+        margin-top: 40px;
+      }
+    </style>
+</head>
+<body>
+  <div class="top-bar">
+    <div class="top-bar-left">
+        <span><i class="fas fa-phone"></i> +00 123 456 8910</span>
+        <span><i class="fas fa-envelope"></i> animoph@gmail.com</span>
+    </div>
+    <div class="top-bar-right">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+    </div>
+</div>
+
+<nav>
+    <ul class="sidebar">
+        <li onclick=hideSidebar()><a href="#" ><i class='bx bx-x'></i></a><hr></li>
+        <li class="hideOnPC"><a href="../index.html" >Home</a><hr></li>
+        <li class="hideOnPC"><a href="../agriabout.html">About Us</a><hr></li>
+        <li class="hideOnPC"><a href="../agri weather/agriweather.html" >Weather</a><hr></li>
+        <li class="hideOnPC"><a href="../loan.html" >Loan</a><hr></li>
+        <li class="hideOnPC"><a href="../agribuy.html" >Buy</a><hr></li>
+        <li class="hideOnPC"><a href="../agrisell.html" >Sell</a><hr></li>
+        <li><a href="../Agri profilr/agriprofile.html" >Profile</a></li><hr>
+        <li><a href="../Agri News/agrinews.html" >Gov't Updates</a></li><hr>
+        <li><a href="../Agri Services/agriservices.html">AniMo Services</a></li><hr>
+        <li><a href="../Agri Learning/agrilearning.html">Learning Hub / Guides</a></li><hr>
+        <li><a href="agrifeedback.html">Feedback</a></li><hr>
+        <li><a href="../adminLogin.html">Admin</a></li><hr>
+        <li><a href="../index.html">Log Out</a></li><hr>
+    </ul>
+
+    <ul>
+        <li id="logo"><a href="#" ><img src = "../images/home-logo.png" alt="logo"></a></li>
+        <li class="hideOnMobile"><a href="../index.html" >Home</a></li>
+        <li class="hideOnMobile"><a href="../agriabout.html">About Us</a></li>
+        <li class="hideOnMobile"><a href="../agri weather/agriweather.html" >Weather</a></li>
+        <li class="hideOnMobile"><a href="../loan.html" >Loan</a></li>
+        <li class="hideOnMobile"><a href="../agribuy.html" >Buy</a></li>
+        <li class="hideOnMobile"><a href="../agrisell.html" >Sell</a></li>
+        <li onclick=showSidebar()><a href="#" ><i class='bx bx-menu'></i></a></li>
+    </ul>
+</nav>
+
+  <div class="profile">
+    <h1>Marketplace Administrator</h1>
+    <div class="profile-pic-wrapper">
+        <label for="profileUpload">
+          <img id="profileImage" src="user.jpg" alt="Profile Picture" />
+          <div class="camera-icon">
+            <img src="camera.svg" alt="Upload" />
+          </div>
+        </label>
+        <input type="file" id="profileUpload" accept="image/*" />
+      </div>
+    
+      <h3 id="adminame">Name</h3>
+      <p id="adminID">ID Number</p>
+        </div>
+
+<div class="section">
+            <h2>Buy Records</h2>
+  <button onclick="showAddBuyForm()">Add Buy Record</button>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Product Name</th>
+        <th>Price</th>
+        <th>Delivery Location</th>
+        <th>Mode of Payment</th>
+        <th>Order Total</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody id="buyBody"></tbody>
+  </table>
+</div>
+
+
+<div class="section">
+  <h2>Sell Records</h2>
+<button onclick="showAddSellForm()">Add Sell Record</button>
+
+<table>
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th>Product</th>
+      <th>Price</th>
+      <th>Location</th>
+      <th>Duration</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody id="sellBody"></tbody>
+</table>
+</div>
+
+<footer class="footer">
+  <hr>
+  <div>
+      <div class="footer-left">
+          <p>Copyright © 2025 AniMo.Ph. All Rights Reserved.</p>
+      </div>
+      <div class="footer-right">
+          <p>
+              <a href="#">Terms of Use</a> |
+              <a href=""> Privacy Policy</a> |
+              <a href="">Legal & Policies</a>
+          </p>
+      </div>
+  </div>
+</footer> 
+<script>
+  const profileUpload = document.getElementById("profileUpload");
+  const profileImage = document.getElementById("profileImage");
+  
+  profileUpload.addEventListener("change", function () {
+    const file = this.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        profileImage.setAttribute("src", e.target.result);
+      };
+      reader.readAsDataURL(file);
+    }
+  });
+  
+  let draftData = [
+    ...(JSON.parse(localStorage.getItem("buyRecordsDrafts")) || []),
+    ...(JSON.parse(localStorage.getItem("buyRecords")) || []).map(entry => ({
+      product: entry.productName,
+      price: entry.totalPrice,
+      deliveryLoc: entry.deliveryLocation,
+      paymentMode: entry.modeOfPayment,
+      total: entry.orderTotal
+    }))
+  ];
+  
+  function saveDraftData() {
+    localStorage.setItem("buyRecordsDrafts", JSON.stringify(draftData));
+  }
+  
+  function createBuyActionButtons(row, index) {
+    const td = document.createElement("td");
+  
+    const editBtn = document.createElement("button");
+    editBtn.textContent = "Edit";
+    editBtn.onclick = () => {
+      row.querySelectorAll("input").forEach(input => input.removeAttribute("readonly"));
+    };
+  
+    const deleteBtn = document.createElement("button");
+    deleteBtn.textContent = "Delete";
+    deleteBtn.onclick = () => {
+      draftData.splice(index, 1);
+      saveDraftData();
+      renderAllBuyRecords();
+    };
+  
+    const submitBtn = document.createElement("button");
+    submitBtn.textContent = "Submit";
+    submitBtn.onclick = () => {
+      const inputs = row.querySelectorAll("input");
+      const values = Array.from(inputs).map(i => i.value.trim());
+  
+      if (values.some(v => v === "")) {
+        alert("Please fill out all fields.");
+        return;
+      }
+  
+      const entry = {
+        product: values[0],
+        price: values[1],
+        deliveryLoc: values[2],
+        paymentMode: values[3],
+        total: values[4]
+      };
+  
+      const submitted = JSON.parse(localStorage.getItem("submittedBuyRecords")) || [];
+      submitted.push(entry);
+      localStorage.setItem("submittedBuyRecords", JSON.stringify(submitted));
+  
+      alert("Buy record submitted to superadmin.");
+  
+      draftData.splice(index, 1);
+      saveDraftData();
+      renderAllBuyRecords();
+    };
+  
+    td.append(editBtn, deleteBtn, submitBtn);
+    return td;
+  }
+  
+  function showAddBuyForm() {
+    const tbody = document.getElementById("buyBody");
+    if (document.getElementById("createRow")) return;
+  
+    const row = document.createElement("tr");
+    row.id = "createRow";
+  
+    const inputs = [];
+    for (let i = 0; i < 5; i++) {
+      const td = document.createElement("td");
+      const input = document.createElement("input");
+      input.type = "text";
+      inputs.push(input);
+      td.appendChild(input);
+      row.appendChild(td);
+    }
+  
+    const td = document.createElement("td");
+    const createBtn = document.createElement("button");
+    createBtn.textContent = "Create";
+    createBtn.onclick = () => {
+      const values = inputs.map(i => i.value.trim());
+      if (values.some(v => v === "")) {
+        alert("Please fill all fields.");
+        return;
+      }
+  
+      const newEntry = {
+        product: values[0],
+        price: values[1],
+        deliveryLoc: values[2],
+        paymentMode: values[3],
+        total: values[4]
+      };
+  
+      draftData.push(newEntry);
+      saveDraftData();
+      renderAllBuyRecords();
+    };
+  
+    td.appendChild(createBtn);
+    row.appendChild(td);
+    tbody.appendChild(row);
+  }
+  
+  let sellDraftData = JSON.parse(localStorage.getItem("sellRecordsDrafts")) || [];
+
+  function renderSellTable() {
+    const tbody = document.getElementById("sellBody");
+    tbody.innerHTML = "";
+    sellDraftData.forEach((entry, index) => {
+      const row = document.createElement("tr");
+      row.innerHTML = `
+        <td><input type="text" value="${entry.category}" readonly></td>
+        <td><input type="text" value="${entry.product}" readonly></td>
+        <td><input type="text" value="${entry.price}" readonly></td>
+        <td><input type="text" value="${entry.location}" readonly></td>
+        <td><input type="text" value="${entry.duration}" readonly></td>
+      `;
+      row.appendChild(createSellActionButtons(row, index));
+      tbody.appendChild(row);
+    });
+  }
+
+  
+  function saveSellDraftData() {
+    localStorage.setItem("sellRecordsDrafts", JSON.stringify(sellDraftData));
+  }
+  
+  function createSellActionButtons(row, index) {
+    const td = document.createElement("td");
+  
+    const editBtn = document.createElement("button");
+    editBtn.textContent = "Edit";
+    editBtn.onclick = () => {
+      row.querySelectorAll("input").forEach(input => input.removeAttribute("readonly"));
+    };
+  
+    const deleteBtn = document.createElement("button");
+    deleteBtn.textContent = "Delete";
+    deleteBtn.onclick = () => {
+      sellDraftData.splice(index, 1);
+      saveSellDraftData();
+      renderSellTable();
+    };
+  
+    const submitBtn = document.createElement("button");
+    submitBtn.textContent = "Submit";
+    submitBtn.onclick = () => {
+      const inputs = row.querySelectorAll("input");
+      const values = Array.from(inputs).map(i => i.value.trim());
+  
+      if (values.some(v => v === "")) {
+        alert("Please fill out all fields.");
+        return;
+      }
+  
+      const entry = {
+        category: values[0],
+        product: values[1],
+        price: values[2],
+        location: values[3],
+        duration: values[4]
+      };
+  
+      const submitted = JSON.parse(localStorage.getItem("submittedSellRecords")) || [];
+      submitted.push(entry);
+      localStorage.setItem("submittedSellRecords", JSON.stringify(submitted));
+  
+      alert("Sell record submitted to superadmin.");
+  
+      sellDraftData.splice(index, 1);
+      saveSellDraftData();
+      renderSellTable();
+    };
+  
+    td.append(editBtn, deleteBtn, submitBtn);
+    return td;
+  }
+  
+  function showAddSellForm() {
+    const tbody = document.getElementById("sellBody");
+    if (document.getElementById("sellCreateRow")) return;
+  
+    const row = document.createElement("tr");
+    row.id = "sellCreateRow";
+  
+    const inputs = [];
+    for (let i = 0; i < 5; i++) {
+      const td = document.createElement("td");
+      const input = document.createElement("input");
+      input.type = "text";
+      inputs.push(input);
+      td.appendChild(input);
+      row.appendChild(td);
+    }
+  
+    const td = document.createElement("td");
+    const createBtn = document.createElement("button");
+    createBtn.textContent = "Create";
+    createBtn.onclick = () => {
+      const values = inputs.map(i => i.value.trim());
+      if (values.some(v => v === "")) {
+        alert("Please fill all fields.");
+        return;
+      }
+  
+      const newEntry = {
+        category: values[0],
+        product: values[1],
+        price: values[2],
+        location: values[3],
+        duration: values[4]
+      };
+  
+      sellDraftData.push(newEntry);
+      saveSellDraftData();
+      renderSellTable();
+    };
+  
+    td.appendChild(createBtn);
+    row.appendChild(td);
+    tbody.appendChild(row);
+  }
+  
+  function renderSellTable() {
+    const tbody = document.getElementById("sellBody");
+    tbody.innerHTML = "";
+    sellDraftData.forEach((entry, index) => {
+      const row = document.createElement("tr");
+      row.innerHTML = `
+        <td><input type="text" value="${entry.category}" readonly></td>
+        <td><input type="text" value="${entry.product}" readonly></td>
+        <td><input type="text" value="${entry.price}" readonly></td>
+        <td><input type="text" value="${entry.location}" readonly></td>
+        <td><input type="text" value="${entry.duration}" readonly></td>
+      `;
+      row.appendChild(createSellActionButtons(row, index));
+      tbody.appendChild(row);
+    });
+  }
+  
+  function renderAllBuyRecords() {
+    const tbody = document.getElementById("buyBody");
+    tbody.innerHTML = "";
+  
+    draftData.forEach((entry, index) => {
+      const row = document.createElement("tr");
+      row.innerHTML = `
+        <td><input type="text" value="${entry.product}" readonly></td>
+        <td><input type="text" value="${entry.price}" readonly></td>
+        <td><input type="text" value="${entry.deliveryLoc}" readonly></td>
+        <td><input type="text" value="${entry.paymentMode}" readonly></td>
+        <td><input type="text" value="${entry.total}" readonly></td>
+      `;
+      row.appendChild(createBuyActionButtons(row, index));
+      tbody.appendChild(row);
+    });
+  }
+  
+  window.onload = function () {
+    const admin = JSON.parse(localStorage.getItem("activeAdmin"));
+    if (admin) {
+      document.getElementById("adminame").textContent = admin.name;
+      document.getElementById("adminID").textContent = admin.id;
+    }
+    renderAllBuyRecords();
+    renderSellTable();
+  };
+  </script>
+  
+  
+</body>
+</html>

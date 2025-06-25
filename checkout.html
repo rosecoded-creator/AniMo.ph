@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Checkout</title>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: sans-serif;
+    }
+
+    body {
+      background-color: rgb(241, 241, 241);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      padding: 2rem;
+    }
+
+    .checkout {
+      background-color: #fdfdfd;
+      border-radius: 20px;
+      width: 100%;
+      max-width: 420px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      overflow: hidden;
+      display: none;
+    }
+
+    .checkout.active {
+      display: block;
+    }
+
+    .checkout h2 {
+      color: #37833a;
+      padding: 1rem;
+      margin: 0;
+      text-align: center;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .checkout-details {
+      background-color: #ebe7e7;
+      padding: 1rem;
+    }
+
+    .checkout-details > div:first-child {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .checkout-details span > .bx {
+      color: #37833a;
+      font-size: 3rem;
+    }
+
+    .checkout-details .bx {
+      font-size: 2rem;
+    }
+
+    .checkout-details p {
+      font-size: 1.1rem;
+      border-radius: 20px;
+      padding: 1rem;
+      background-color: #fdfdfd;
+      box-shadow: 0 0 5px black;
+      margin: 1rem 0 -2rem 0;
+    }
+
+    .content {
+      padding: 2rem;
+    }
+
+    .content > div {
+      background-color: #ebe7e7;
+      border-radius: 20px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .content > div.active {
+      background-color: #ecfcdb;
+      border: 2px solid #37833a;
+    }
+
+    .content div p,
+    .content div h3 {
+      margin: 0.25rem 0 0.5rem 0;
+      padding-left: 1rem;
+    }
+
+    .content > div:hover {
+      transform: scale(1.02);
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem;
+    }
+
+    .checkout-btn,
+    .back,
+    .continue-btn {
+      background-color: #37833a;
+      padding: 0.75rem 1rem;
+      color: white;
+      border-radius: 10px;
+      border: none;
+      font-weight: bold;
+      width: 48%;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .checkout-btn:hover,
+    .back:hover,
+    .continue-btn:hover {
+      background-color: #266b28;
+    }
+
+    .item-container {
+      padding: 1rem;
+      min-height: 50px;
+      background-color: #fff;
+      border-radius: 15px;
+      box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+
+
+  <div class="checkout active" id="step1">
+    <h2>Check Out 1/3</h2>
+    <div class="checkout-details">
+      <div>
+        <span><i class='bx bx-map-pin'></i></span>
+        <i class='bx bx-chevrons-right'></i>
+        <i class='bx bx-basket'></i>
+        <i class='bx bx-chevrons-right'></i>
+        <i class='bx bx-money'></i>
+      </div>
+      <div>
+        <p>
+          <i class='bx bx-check-circle'></i> [Buyer's Name] <br>
+          Metro Manila, Philippines <br>
+          2002 <br>
+          +63 9994444333
+        </p>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="active">
+        <h3><i class='bx bx-building'></i> Work</h3>
+        <p>
+          Deloitte, Philippines <br>
+          +69 123901233 <br>
+          BGC, TAGIG CITY PHILIPPINES
+        </p>
+      </div>
+      <div>
+        <h3><i class='bx bx-home-alt-2'></i> Home</h3>
+        <p>
+          Razzo Household <br>
+          +69 123901233 <br>
+          BACOOR, CAVITE PHILIPPINES
+        </p>
+      </div>
+    </div>
+
+    <div class="buttons" style="justify-content: flex-end; padding-bottom: 1.5rem;">
+      <button class="continue-btn">Continue</button>
+    </div>
+  </div>
+
+
+  <div class="checkout" id="step2">
+    <h2>Check Out 2/3</h2>
+    <div class="checkout-details">
+      <div>
+        <i class='bx bx-map-pin'></i>
+        <i class='bx bx-chevrons-right'></i>
+        <span><i class='bx bx-basket'></i></span>
+        <i class='bx bx-chevrons-right'></i>
+        <i class='bx bx-money'></i>
+      </div>
+      <div>
+        <p>
+          <i class='bx bx-check-circle'></i> [Buyer's Name] <br>
+          Metro Manila, Philippines <br>
+          2002 <br>
+          +63 9994444333
+        </p>
+      </div>
+    </div>
+    <div class="content">
+      <div class="item-container"></div>
+    </div>
+    <div class="buttons">
+      <button class="back">Back</button>
+      <button class="continue-btn">Continue</button>
+    </div>
+  </div>
+
+
+  <div class="checkout" id="step3">
+    <h2>Check Out 3/3</h2>
+    <div class="checkout-details">
+      <div>
+        <i class='bx bx-map-pin'></i>
+        <i class='bx bx-chevrons-right'></i>
+        <i class='bx bx-basket'></i>
+        <i class='bx bx-chevrons-right'></i>
+        <span><i class='bx bx-money'></i></span>
+      </div>
+      <div>
+        <p>
+          <i class='bx bx-check-circle'></i> [Buyer's Name] <br>
+          Metro Manila, Philippines <br>
+          2002 <br>
+          +63 9994444333
+        </p>
+      </div>
+    </div>
+    <div class="content">
+      <div class="active">
+        <h3><i class='bx bxs-truck'></i> Cash On Delivery</h3>
+        <p>Additional 20 Charges for COD services</p>
+      </div>
+      <div>
+        <h3><i class='bx bxs-credit-card-front'></i> Credit Card</h3>
+        <p>
+          Marco Razzo <br>
+          4567 **** **** ****
+        </p>
+      </div>
+    </div>
+    <div class="buttons">
+      <button class="back">Back</button>
+      <button class="checkout-btn">Checkout</button>
+    </div>
+  </div>
+
+  <script>
+    const steps = ['step1', 'step2', 'step3'];
+    let currentStep = 0;
+
+    function showStep(index) {
+      steps.forEach((id, i) => {
+        document.getElementById(id).classList.toggle('active', i === index);
+      });
+      currentStep = index;
+    }
+
+    document.querySelectorAll('.checkout .content').forEach(content => {
+      const divs = content.querySelectorAll('div');
+      divs.forEach(div => {
+        div.addEventListener('click', () => {
+          divs.forEach(d => d.classList.remove('active'));
+          div.classList.add('active');
+        });
+      });
+    });
+
+    document.querySelectorAll('.continue-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (currentStep < steps.length - 1) {
+          showStep(currentStep + 1);
+        }
+      });
+    });
+
+    document.querySelectorAll('.back').forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (currentStep > 0) {
+          showStep(currentStep - 1);
+        }
+      });
+    });
+
+    function renderCart() {
+      const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+      const container = document.querySelector('#step2 .item-container');
+      if (!cart.length) {
+        container.innerHTML = '<p>Your cart is empty.</p>';
+        return;
+      }
+      container.innerHTML = cart.map(item => `
+        <div>
+          <strong>${item.name}</strong> - ₱${item.price} ${item.unit || ''} x ${item.qty}
+        </div>
+      `).join('');
+    }
+
+    document.querySelector('.checkout-btn').addEventListener('click', () => {
+      const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+      if (!cart.length) return alert("Cart is empty!");
+
+      let myOrders = JSON.parse(localStorage.getItem("myOrders")) || [];
+      let myTransactions = JSON.parse(localStorage.getItem("myTransactions")) || [];
+      let buyRecords = JSON.parse(localStorage.getItem("buyRecords")) || [];
+
+      const orderId = "ORD" + String(myOrders.length + 1).padStart(4, '0');
+      const amount = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+      const selectedPayment = document.querySelector("#step3 .content > div.active h3")?.innerText?.trim() || "Unknown";
+      const productList = cart.map(p => ({ name: p.name, qty: p.qty }));
+
+      myOrders.push({
+        orderId,
+        item: productList.map(p => `${p.name} x${p.qty}`).join(', '),
+        quantity: `₱ ${amount}`,
+        status: selectedPayment
+      });
+
+      const today = new Date().toLocaleDateString("en-PH");
+      myTransactions.push({
+        orderId,
+        date: today,
+        type: productList.map(p => p.name).join(', '),
+        amount,
+        status: "pending"
+      });
+
+      buyRecords.push({
+        productName: productList.map(p => `${p.name} x${p.qty}`).join(', '),
+        totalPrice: `₱${amount.toFixed(2)}`,
+        deliveryLocation: "Metro Manila",
+        modeOfPayment: selectedPayment,
+        orderTotal: `₱${amount.toFixed(2)}`
+      });
+
+      localStorage.setItem("myOrders", JSON.stringify(myOrders));
+      localStorage.setItem("myTransactions", JSON.stringify(myTransactions));
+      localStorage.setItem("buyRecords", JSON.stringify(buyRecords));
+      localStorage.removeItem("cart");
+
+      alert('Checkout Complete!');
+      window.location.href = './agriActivity.html';
+    });
+
+    renderCart();
+    showStep(currentStep);
+  </script>
+</body>
+</html>

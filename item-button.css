@@ -1,0 +1,134 @@
+.item-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #37833a;
+}
+
+ .item {
+    background-color: #37833a;
+    height: 15rem;
+    width: 13rem; 
+    border: none;
+    border-radius: 20px;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+}
+
+.item:hover {
+    transform: scale(1.03);
+}
+
+@media (max-width: 768px) {
+    .top-sellers {
+        width: 90%;
+        padding: 1rem;
+    }
+
+    .top-sellers .item {
+        width: 100%;
+        height: 12rem;
+    }
+}
+
+.item {
+    background-color: #37833a;
+    height: auto;
+    width: 13rem;
+    border: none;
+    border-radius: 20px;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+}
+
+.item:hover {
+    transform: scale(1.03);
+}
+
+.item > div {
+    background-color: white;
+    border-radius: 15px;
+    height: 90%;
+    width: 90%;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    gap: 0.5rem;
+}
+
+.item img {
+    width: 8rem;
+    height: 8rem;
+    object-fit: contain;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.item p {
+    color: #333;
+    font-size: 0.9rem;
+    text-align: left;
+    width: 100%;
+    line-height: 1.3;
+    padding: 0 0.2rem;
+}
+
+.item .bx {
+    font-size: 0.75rem;
+}
+
+@media (max-width: 768px) {
+    .item {
+        width: 100%;
+        height: 12rem;
+    }
+}
+.item-container h2 {
+    background-color: #37833a;
+    padding: 1rem;
+    text-align: center;
+    font-style: italic;
+    color: white;
+    font-size: 2rem;
+    margin: 2rem;
+    border-radius: 1rem;
+}
+
+.fruits.market {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+}
+
+.fruits.market > div {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 3rem;
+    gap: 2rem;
+}
+
+.fruits.market .item {
+    margin: 0 0 0 1rem;
+}
+
+.fruits.market {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem;
+}
+
+.fruits.market > div {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 2rem;
+}

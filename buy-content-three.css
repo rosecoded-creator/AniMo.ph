@@ -1,0 +1,140 @@
+.content-three {
+    background-color: white;
+    width: 90%;
+    height: 40rem;
+    border-radius: 20px;
+    display: flex;
+    justify-self: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.content-three h2 {
+    color: #37833a;
+    font-weight: bold;
+    text-align: center;
+    font-size: 2.5rem;
+    margin: 2rem;
+}
+
+.content-three div {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    margin: 0 0 3rem 0;
+    justify-content: center;
+}
+
+.content-three-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #37833a;
+}
+
+.content-three-2 h2 {
+    font-size: 2rem;
+    margin: 2rem;
+}
+
+.first-row img, .second-row img {
+    transition: all 0.3s ease;
+}
+
+.first-row img:hover, .second-row img:hover {
+    scale: 1.10;
+}
+
+.fruits.market {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem;
+}
+
+.fruits.market > div {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+.fruits.market .item {
+    margin: 0 0 0 4rem;
+}
+
+.see-more {
+    display: flex;
+    flex-direction: row;
+    background-color: #37833a;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    width: 10rem;
+    height: 3rem;
+    font-size: 1.2rem;
+    justify-content: center;
+    align-items: center;
+    margin: 5rem; 
+    transition: all 0.3s ease;
+}
+
+.see-more:hover {
+    background-color: #36a13a;
+    transform: scale(120%);
+}
+
+
+.see-more:active {
+    background-color: #236726;
+}
+
+footer {
+    background-color: #f8f8f8;
+    padding: 20px 0;
+    text-align: center;
+    color: rgb(80, 80, 80);
+    border-top: 1px solid #e7e7e7;
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.footer-links{
+  text-align: right;
+}
+
+.footer-links a {
+    color: black;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.footer div {
+    display: flex;
+    margin-top: 10px;
+}
+
+.footer .footer-left{
+    justify-content: left;
+    margin-left: 40px;
+}
+
+.footer .footer-right {
+    margin-left: auto;
+    margin-right: 40px;
+}
+
+.footer a {
+    color: rgb(80, 80, 80);
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: rgb(24, 24, 24);
+}

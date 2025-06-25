@@ -1,0 +1,148 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('home-photo-3.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+  }
+
+  .footer, nav, .top-bar {
+    width: 100%;
+  }
+
+nav{
+    margin-bottom: 10rem;
+  }
+
+  .footer {
+    margin-top: 5rem;
+  }
+  
+  .container {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 20px;
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    box-sizing: border-box;
+  }
+  
+  .container p {
+    margin: 0;
+    font-size: 16px;
+  }
+  
+  .container h2 {
+    margin-top: 10px;
+    font-size: 24px;
+    color:green;
+    margin-bottom: 40px;
+  }
+  
+  .log-in {
+    width: 100%;
+    margin-top: 20px;
+    box-sizing: border-box;
+    text-align: left;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+    font-size: 14px;
+    box-sizing: border-box;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  .log-in p {
+    font-size: 14px;
+    margin: 0 0 15px 0;
+  }
+  
+  button {
+    width: 100%;
+    background-color: #2e7d32;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #1b5e20;
+  }
+  
+  .bottom-text {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+  }
+  
+  .bottom-text a {
+    color: #007bff;
+  }
+  .password-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 15px;
+  
+  }
+  
+  .password-container input {
+    width: 100%;
+    padding: 12px 45px 12px 15px; 
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    box-sizing: border-box;
+  }
+  
+  .toggle-password {
+    position: absolute;
+    top: 35%;
+    right: 15px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 18px;
+    color: #444;
+    user-select: none;
+  }
+
+  #forgotPass{
+    text-decoration:none;
+    color:green;
+  }
+
+  #signInLogIn{
+    text-decoration:none;
+    color:green;
+  }
+  
+  
+  

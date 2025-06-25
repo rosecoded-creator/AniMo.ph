@@ -1,0 +1,189 @@
+.main-container {
+    background-color: white;
+    width: 90%;
+    justify-content: center;
+    justify-self: center;
+    margin: -6rem 0 5rem 0;
+    text-align: center;
+    border-radius: 1rem;
+}
+
+body > h1 {
+    color: #37833a;
+    background-color: white;
+    border-radius: 10px;
+    text-align: center;
+    width: 70%;
+    padding: 1rem;
+    justify-self: center;
+    margin: 2rem 0 5rem 0;
+}
+
+body > h2 {
+    position: relative;
+    color: #37833a;
+    background-color: white;
+    border-radius: 10px;
+    text-align: center;
+    width: 88%;
+    padding: 1rem;
+    justify-self: center;
+    margin: 1rem 0;
+}
+
+h2 > .bx-message-alt-dots {
+    position: absolute;
+    right: 1rem;
+    top: 60%;
+    transform: translateY(-50%);
+    background-color: #d6b524;
+    border-radius: 50%;
+    color: white;
+    font-size: 1rem;  
+    padding: 0.35rem;
+}
+
+.table {
+    padding: 2.5rem;
+}
+
+.table-head {
+    display: flex;
+    background-color: #37833a;
+    color: white;
+    font-weight: bold;
+    flex-direction: row;
+    justify-content: space-evenly;
+    justify-self: center;
+    border-radius: 10px;
+    margin: 1rem 0;
+    width: 90%;
+    padding: 1rem;
+}
+
+.table-body {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    width: 90%;
+    background-color: #f2f2f2;
+    border: #37833a solid 1px;
+    padding: 1rem;
+}
+
+.body-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.body-row > div {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 20px;
+    box-shadow: 0px 0px 5px gray;
+    color: #37833a;
+    width: 20%;
+    margin: 0.5rem;
+    text-align: left;
+}
+
+.filter-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.filter {
+    display: flex;
+    flex-direction: row;
+    color: #37833a;
+    font-weight: bold;
+    background-color: #ffffff;
+    padding: 0.5rem;
+    border: solid gray 1px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px gray;
+    align-items: center;
+}
+
+.filter h2 {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+}
+
+input {
+    color: #37833a;
+    border: none;
+    margin: 0.25rem;
+    font-weight: bold;
+}
+
+.filter-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.filter {
+    display: flex;
+    flex-direction: row;
+    color: #37833a;
+    font-weight: bold;
+    background-color: #ffffff;
+    padding: 0.5rem;
+    border: solid gray 1px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px gray;
+    align-items: center;
+}
+
+.filter h2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+input {
+    color: #37833a;
+    border: none;
+    margin: 0.25rem;
+    font-weight: bold;
+}
+
+.styled-table {
+    width: 90%;
+    margin: 0 auto;
+    border-collapse: separate;
+    border-spacing: 0 15px;
+    padding: 2rem;
+}
+
+.styled-table thead th {
+    background-color: #37833a;
+    color: white;
+    font-weight: bold;
+    padding: 1rem;
+    text-align: center; 
+}
+
+.styled-table tbody td {
+    background-color: white;
+    color: #37833a;
+    font-weight: bold;
+    text-align: center; 
+    padding: 1rem;
+    box-shadow: 0px 0px 5px gray;
+}
+
+.styled-table tbody tr:hover td {
+    background-color: #e1f3e1;
+    transition: all 0.3s ease;
+}
+
+

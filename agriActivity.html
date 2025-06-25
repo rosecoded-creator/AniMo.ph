@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AniMo.ph</title>
+  <link rel="icon" href="./images/home-logo.png" />
+  <link rel="stylesheet" href="./buy-top-bar.css" />
+  <link rel="stylesheet" href="./item-button.css" />
+  <link rel="stylesheet" href="./agriactivity.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    .item {
+      position: relative;
+      cursor: pointer;
+    }
+
+    .delete-btn {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      background: red;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      font-size: 12px;
+      cursor: pointer;
+    }
+
+    .delete-section-btn.green-btn {
+      background-color: #4CAF50;
+      color: white;
+      padding: 8px 16px;
+      font-size: 15px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .delete-section-btn.green-btn:hover {
+      background-color: #45a049;
+    }
+
+    .center-btn {
+      text-align: center;
+      margin: 15px 0;
+    }
+
+
+    .add-product-button .green-add-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .add-product-button .green-add-btn:hover {
+    background-color: #45a049;
+  }
+  </style>
+</head>
+<body>
+  <h2>MY ACTIVITY <i class='bx bx-message-alt-dots'></i></h2>
+
+  <h1>MY LISTINGS</h1>
+  <div class="main-container">
+    <div class="item-container">
+      <div class="fruits market">
+        <h2>VEGETABLES</h2>
+        <div class="listing-section" data-type="vegetables"></div>
+      </div>
+    </div>
+
+    <div class="item-container">
+      <div class="fruits market">
+        <h2>CROPS</h2>
+        <div class="listing-section" data-type="crops"></div>
+      </div>
+    </div>
+
+    <div class="item-container">
+      <div class="fruits market">
+        <h2>SUPPLIES</h2>
+        <div class="listing-section" data-type="supplies"></div>
+      </div>
+    </div>
+
+    <div class="add-product-button" style="text-align: center; margin: 30px 0;">
+        <a href="productAdd.html">
+          <button class="green-add-btn"> Add Product</button>
+        </a>
+      </div>
+
+    <hr>
+  </div>
+
+  <h1>MY ORDERS</h1>
+  <div class="table">
+    <div class="table-head">
+      <div>ORDER ID</div>
+      <div>PRODUCT</div>
+      <div>AMOUNT</div>
+      <div>MODE OF PAYMENT</div>
+    </div>
+    <div class="table-body"></div>
+  </div>
+
+  <div class="center-btn">
+    <button class="delete-section-btn green-btn" onclick="deleteLatestOrder()">Delete Latest Record</button>
+  </div>
+
+  <h1>MY TRANSACTIONS</h1>
+  <div class="filter-container">
+    <div class="filter calendar"><input type="date" /></div>
+    <div class="filter order">
+      <h2><i class='bx bx-search'></i> <input type="text" placeholder="Order ID" /></h2>
+    </div>
+  </div>
+
+  <table class="styled-table">
+    <thead>
+      <tr>
+        <th>Order ID</th>
+        <th>Date</th>
+        <th>Type</th>
+        <th>Amount</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <div class="center-btn">
+    <button class="delete-section-btn green-btn" onclick="deleteLatestTransaction()">Delete Latest Transaction</button>
+  </div>
+
+  <footer class="footer">
+    <hr />
+    <div>
+      <div class="footer-left">
+        <p>Copyright © 2025 AniMo.Ph. All Rights Reserved.</p>
+      </div>
+      <div class="footer-right">
+        <p>
+          <a href="#">Terms of Use</a> |
+          <a href="#">Privacy Policy</a> |
+          <a href="#">Legal & Policies</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./topbar.js"></script>
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      let listings = JSON.parse(localStorage.getItem("myListings")) || [];
+      let orders = JSON.parse(localStorage.getItem("myOrders")) || [];
+      let transactions = JSON.parse(localStorage.getItem("myTransactions")) || [];
+
+      const statuses = ["pending", "pending", "ready to deliver", "ready to deliver", "received", "received"];
+      const dates = ["2/14/2025", "5/30/2025", "6/1/2025", "6/20/2025"];
+      let orderCounter = orders.length + 1;
+
+     
+      listings.forEach((product, index) => {
+        const container = document.querySelector(`.listing-section[data-type="${product.type}"]`);
+        if (container) {
+          const item = document.createElement("div");
+          item.className = "item";
+          item.innerHTML = `
+            <button class="delete-btn" data-index="${index}">&times;</button>
+            <div>
+              <img src="${product.image}" alt="${product.name}" />
+              <p>
+                ${product.name.toUpperCase()} <br>
+                ₱ ${product.price} <br>
+                <i class='bx bx-map'></i> ${product.location} <br>
+                <i class='bx bx-time'></i> ${product.timeline}
+              </p>
+            </div>
+          `;
+          container.appendChild(item);
+        }
+      });
+
+      console.log("Loaded Listings:", listings);
+
+     
+      document.body.addEventListener("click", function (e) {
+        if (e.target.classList.contains("delete-btn")) {
+          const index = parseInt(e.target.getAttribute("data-index"));
+          listings.splice(index, 1);
+          localStorage.setItem("myListings", JSON.stringify(listings));
+          location.reload();
+        }
+      });
+
+     
+      document.body.addEventListener("click", function (e) {
+        const item = e.target.closest(".item");
+        if (item && !e.target.classList.contains("delete-btn")) {
+          const name = item.querySelector("p").innerText.split("\n")[0].trim();
+          const quantity = Math.floor(Math.random() * 5) + 1;
+          const status = statuses[orderCounter % statuses.length];
+          const date = dates[orderCounter % dates.length];
+          const amount = Math.floor(Math.random() * 500) + 100;
+          const orderId = "ORD" + String(orderCounter).padStart(4, "0");
+
+          orders.push({ orderId, item: name, quantity, status });
+          transactions.push({ orderId, date, type: name, amount, status });
+
+          localStorage.setItem("myOrders", JSON.stringify(orders));
+          localStorage.setItem("myTransactions", JSON.stringify(transactions));
+
+          orderCounter++;
+          alert(`${name} has been added to My Orders and My Transactions.`);
+          location.reload();
+        }
+      });
+
+  
+      const ordersTable = document.querySelector(".table-body");
+      orders.forEach(order => {
+        const row = document.createElement("div");
+        row.className = "body-row";
+        row.innerHTML = `
+          <div>${order.orderId}</div>
+          <div>${order.item}</div>
+          <div>${order.quantity}</div>
+          <div>${order.status}</div>`;
+        ordersTable.appendChild(row);
+      });
+
+    
+      const transactionsTable = document.querySelector("table.styled-table tbody");
+        transactions.forEach(transaction => {
+          const row = document.createElement("tr");
+          row.innerHTML = `
+            <td>${transaction.orderId}</td>
+            <td>${transaction.date}</td>
+            <td>${transaction.type}</td>
+            <td>₱ ${transaction.amount}</td>
+            <td>${transaction.status}</td>
+          `;
+          transactionsTable.appendChild(row);
+        });
+
+
+        const orderId = `ORD${latestOrder.order_id}`;
+        const alreadyStored = orders.some(o => o.orderId === orderId);
+        if (!alreadyStored) {
+          orders.push({
+          orderId,
+          item: productNames,
+          quantity: `₱ ${latestOrder.amount}`,
+          status: latestOrder.payment_mode
+        });
+
+        const today = new Date().toLocaleDateString("en-PH");
+        transactions.push({
+          orderId,
+          date: today,
+          type: productNames,
+          amount: latestOrder.amount,
+          status: "pending"
+        });
+
+        localStorage.setItem("myOrders", JSON.stringify(orders));
+        localStorage.setItem("myTransactions", JSON.stringify(transactions));
+      
+        }}
+        );
+
+    function deleteLatestOrder() {
+      let orders = JSON.parse(localStorage.getItem("myOrders")) || [];
+      if (orders.length > 0) {
+        orders.pop();
+        localStorage.setItem("myOrders", JSON.stringify(orders));
+        location.reload();
+      } else {
+        alert("No more orders to delete.");
+      }
+    }
+
+    function deleteLatestTransaction() {
+      let transactions = JSON.parse(localStorage.getItem("myTransactions")) || [];
+      if (transactions.length > 0) {
+        transactions.pop();
+        localStorage.setItem("myTransactions", JSON.stringify(transactions));
+        location.reload();
+      } else {
+        alert("No more transactions to delete.");
+      }
+    };
+  </script>
+</body>
+</html>

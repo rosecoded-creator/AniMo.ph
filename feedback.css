@@ -1,0 +1,205 @@
+:root {
+  --green: #4CAF50;
+  --green-dark: #2E7D32;
+  --light-green: #C8E6C9;
+  --red: #E53935;
+  --blue: #42A5F5;
+  --black: #000000;
+  --white: #ffffff;
+  --gray-light: #f2f2f2;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  color: var(--black);
+  position: relative;
+  z-index: 0;
+}
+
+.footer {
+  margin-top: 10rem;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('feedbackbg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+ 
+  box-shadow: inset 0 0 0 100vmax rgba(0, 0, 0, 0.5); 
+  
+  z-index: -1; 
+}
+
+
+.profile {
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: 2rem;
+  justify-self: center;
+}
+
+.profile h1 {
+  color: var(--green);
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+#adminame,
+#adminID {
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+.profile-pic-wrapper {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 15px;
+}
+
+#profileImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #ddd;
+}
+
+.camera-icon {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: white;
+  border-radius: 50%;
+  padding: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.camera-icon img {
+  width: 20px;
+  height: 20px;
+}
+
+#profileUpload {
+  display: none;
+}
+
+
+.section {
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  margin-bottom: 30px;
+  width: 90%;
+  justify-self: center;
+}
+
+
+.section h2 {
+  color: var(--green);
+  margin-bottom: 20px;
+  margin-top: 15px;
+}
+
+
+button {
+  padding: 8px 14px;
+  background-color: var(--green);
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--green-dark);
+}
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th {
+  background-color: var(--green-dark);
+  color: white;
+  text-transform: uppercase;
+  font-size: 14px;
+  padding: 10px;
+}
+
+td {
+  padding: 10px;
+  text-align: center;
+  background-color: white;
+  border-bottom: 1px solid #eee;
+}
+
+tr:nth-child(even) td {
+  background-color: var(--light-green);
+}
+
+
+input[type="text"] {
+  width: 100%;
+  padding: 6px;
+  border: 1px solid var(--gray-light);
+  border-radius: 4px;
+  box-sizing: border-box;
+  transition: 0.3s ease;
+}
+input[type="text"]:focus {
+  border-color: var(--green);
+  outline: none;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+}
+
+
+td button {
+  margin: 2px;
+  padding: 6px 10px;
+  font-size: 13px;
+}
+
+td button:nth-of-type(1) {
+  background-color: #8BC34A;
+}
+
+td button:nth-of-type(1):hover {
+  background-color: #7CB342;
+}
+
+td button:nth-of-type(2) {
+  background-color: var(--red);
+}
+
+td button:nth-of-type(2):hover {
+  background-color: #C62828;
+}
+
+td button:nth-of-type(3) {
+  background-color: var(--blue);
+}
+
+td button:nth-of-type(3):hover {
+  background-color: #1E88E5;
+}

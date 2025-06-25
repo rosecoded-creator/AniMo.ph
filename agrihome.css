@@ -1,0 +1,351 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+body{
+    overflow-x: hidden;
+    font-family:Arial, Helvetica, sans-serif;
+    background: linear-gradient(
+        to bottom,
+        rgb(56, 123, 52),
+        rgb(149, 165, 30)
+    );
+}
+
+.bx {
+    scale: 150%;
+}
+
+#logo img {
+    height: 40px;
+    width: auto; 
+}
+
+nav{
+    background-color:white;
+
+}
+
+nav ul{
+    width:100%;
+    list-style:none;
+    display:flex;
+    justify-content: flex-end;
+    align-items:center;
+}
+
+nav li{
+    height:50px;
+
+}
+nav a{
+    font-weight: bold;
+    height: 100%;
+    padding: 0 30px;
+    text-decoration: none;
+    display:flex;
+    align-items: center;
+    color: #37833a;
+    transition: 0.3s all ease;
+}
+
+nav a:hover{
+    color: #d5bb47;
+}
+
+nav a:active{
+    color: #bea637;
+}
+
+nav li:first-child{
+    margin-right:auto;
+}
+
+.active {
+    color: #e9c00d;
+}
+
+hr {
+    display: flex;
+    background-color: rgb(230, 230, 230);
+    height: 2px;
+    width: 90%;
+    margin: 0px 10px;
+    justify-self: center;
+    border: none;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 999;
+    background-color: white;
+    backdrop-filter: blur(10px);
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    transform: translateX(100%);
+    opacity: 0;
+    pointer-events: none;
+
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.sidebar.active {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: all;
+}
+
+.sidebar li{
+    width:100%;
+}
+
+.sidebar a{
+    width: 100px;
+}
+
+.menu{
+display:none;
+}
+
+.hideOnPC {
+    display: none;
+}
+
+@media(max-width:800px){
+    
+
+    .hideOnMobile{
+        display:none;
+        
+    }
+
+    .hideOnPC {
+        display: block;
+    }
+
+    .menu{
+        display:block;
+    }
+}
+
+@media(max-with:400px){
+    .sidebar{
+        width:100;
+
+    }
+}
+
+.top-bar {
+    background-color: #4CAF50;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.top-bar-left, .top-bar-right {
+    margin: 0 40px;
+}
+
+.top-bar-left span {
+    margin-right: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.top-bar-right a {
+    color: white;
+    margin-left: 10px;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.top-bar-right a:hover {
+    color: #ddd;
+}
+
+.welcome {
+    min-height: 80vh;
+    width: 100%;
+    background-image:url(./images/home-photo-1.png);
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; 
+    padding-left: 60px;
+    color: white;
+}
+
+.welcome h1, p, button {
+    margin-left: 50px;
+}
+
+.welcome h1 {
+    font-size: 3em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.welcome p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.welcome button {
+    padding: 20px 40px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #37833a;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s all ease;
+}
+
+.welcome button:hover {
+    background-color: #246326;
+}
+
+.welcome button:active {
+    background-color: #205222;
+}
+
+
+.welsecond {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto;
+    gap: 24px;
+    padding: 40px;
+
+    font-family: 'Poppins', sans-serif;
+  }
+  
+ 
+  .welF, .welS, .welT {
+    border-radius: 20px;
+    margin: 30px;
+    box-shadow: 0 10px 30px rgba(0, 10, 2, 0.2);
+    padding: 30px;
+    color: white;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+ 
+  .welF::before, .welS::before, .welT::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 0;
+    border-radius: 20px;
+  }
+  
+ 
+  .welF *, .welS *, .welT * {
+    position: relative;
+    z-index: 1;
+  }
+  
+ 
+  .welF {
+    grid-column: span 2;
+    background-image: url('./images/home-photo-2.jpg'); 
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+}
+
+  
+ 
+  .welS {
+    background-image: url('./images/home-photo-3.jpg'); 
+  }
+  
+ 
+  .welT {
+    background-image: url('./images/home-photo-4.jpg'); 
+  }
+  
+ 
+  .welsecond h2 {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  
+ 
+  .welsecond p {
+    font-size: 20px;
+    line-height: 1.5;
+    margin: 5px 0;
+  }
+
+
+footer {
+    background-color: #f8f8f8;
+    padding: 20px 0;
+    text-align: center;
+    color: rgb(80, 80, 80);
+    border-top: 1px solid #e7e7e7;
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.footer-links{
+  text-align: right;
+}
+
+.footer-links a {
+    color: black;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.footer div {
+    display: flex;
+    margin-top: 10px;
+}
+
+.footer .footer-left{
+    justify-content: left
+}
+
+.footer .footer-right {
+    margin-left: auto;
+    margin-right: 40px;
+}
+
+.footer a {
+    color: rgb(80, 80, 80);
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: rgb(24, 24, 24);
+}

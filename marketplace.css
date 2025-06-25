@@ -1,0 +1,213 @@
+:root {
+  --green: #4CAF50;
+  --light-green: #9CCC65;
+  --red: #E53935;
+  --blue: #42A5F5;
+  --black: #000000;
+  --white: #ffffff;
+  --green-light: #C8E6C9;
+  --white-tint: #F1F8E9;
+  --gray-dark: #4A4A4A;
+  --gray-light: #EDE9E9;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  color: var(--black);
+  background: none;
+  position: relative;
+  z-index: 0;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('marketplacebg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  box-shadow: inset 0 0 0 100vmax rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+/* Profile Section */
+.profile {
+  text-align: center;
+  margin-bottom: 30px;
+  justify-self: center;
+  margin-top: 2rem;
+}
+
+.profile h1 {
+  color: var(--green);
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+#adminame,
+#adminID {
+  color: var(--white);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.profile-pic-wrapper {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 15px;
+}
+
+#profileImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #ddd;
+}
+
+.camera-icon {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: white;
+  border-radius: 50%;
+  padding: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.camera-icon img {
+  width: 20px;
+  height: 20px;
+}
+
+#profileUpload {
+  display: none;
+}
+
+
+.section {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+  width: 90%;
+  justify-self: center;
+}
+
+
+h2 {
+  color: var(--green);
+  margin-top: 18px;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: white;
+}
+
+th {
+  background-color: #2E7D32;
+  color: white;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 12px;
+  text-align: center;
+}
+
+td {
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid var(--gray-light);
+}
+
+tr:nth-child(even) {
+  background-color: var(--green-light);
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+
+input[type="text"] {
+  width: 100%;
+  padding: 6px;
+  border: 1px solid var(--gray-light);
+  border-radius: 4px;
+  box-sizing: border-box;
+  transition: 0.3s ease;
+}
+input[type="text"]:focus {
+  border-color: var(--green);
+  outline: none;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+}
+
+
+button {
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+  margin: 2px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button[onclick*="showAddBuyForm"],
+button[onclick*="showAddSellForm"] {
+  background-color: var(--green);
+  margin-bottom: 10px;
+
+  color: white;
+}
+
+button[onclick*="showAddBuyForm"]:hover,
+button[onclick*="showAddSellForm"]:hover {
+  background-color: #388E3C;
+}
+
+td button:first-of-type {
+  background-color: #8BC34A;
+  color: white;
+}
+
+td button:first-of-type:hover {
+  background-color: #7CB342;
+}
+
+td button:nth-of-type(2) {
+  background-color: var(--red);
+  color: white;
+}
+
+td button:nth-of-type(2):hover {
+  background-color: #C62828;
+}
+
+td button:nth-of-type(3) {
+  background-color: var(--blue);
+  color: white;
+}
+
+td button:nth-of-type(3):hover {
+  background-color: #1E88E5;
+}
